@@ -2,7 +2,7 @@
 
 namespace milkdrunk
 {
-    internal class Feeding
+    public class Feeding
     {
         public FeedingType FeedingType { get; set; }
         public DateTime Time { get; set; }

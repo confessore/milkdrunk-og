@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace milkdrunk
 {
-    internal static class IEnumerableExtensions
+    public static class IEnumerableExtensions
     {
         public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> enumerable)
         {

@@ -12,7 +12,7 @@ namespace milkdrunk
     /// </summary>
     /// <typeparam name="TEntity">the entity type of the table</typeparam>
     /// <typeparam name="TId">the primary key type of the entity</typeparam>
-    interface ILiteDBService<TEntity, TId>
+    public interface ILiteDBService<TEntity, TId>
             where TEntity : Entity<TId>
             where TId : IEquatable<TId>
     {

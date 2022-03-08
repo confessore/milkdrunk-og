@@ -7,15 +7,17 @@ namespace milkdrunk.Views
     {
         void Build()
         {
+            Title = "changing";
             Content = new StackLayout
             {
                 Children = {
-                    new Label
-                    {
-                        Text = "changing"
-                    }.CenterHorizontal()
-                    ,
-
+                    new Button() { Text = "new" }
+                        .Margins(0, 0, 5, 0)
+                        .Paddings(0, 0, 5, 0)
+                        .End(),
+                    new CollectionView() { },
+                    new Editor() { Placeholder = "comments" }
+                        .FillExpand()
                 }
             };
         }

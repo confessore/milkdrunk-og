@@ -1,6 +1,6 @@
 ﻿namespace milkdrunk
 {
-    internal enum FeedingType
+    public enum FeedingType
     {
         Breast,
         Bottle

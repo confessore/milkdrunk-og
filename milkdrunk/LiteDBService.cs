@@ -1,22 +1,23 @@
 ﻿using LiteDB;
+using milkdrunk.Services.Interfaces;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace milkdrunk.Services
 {
-    /// <inheritdoc cref="ILiteDatabaseService{T, U}" />
-    sealed class LiteDBService<TEntity, TId> : ILiteDBService<TEntity, TId>
+    /// <inheritdoc cref="ILiteDBService{T, U}" />
+    public sealed class LiteDBService<TEntity, TId> : ILiteDBService<TEntity, TId>
             where TEntity : Entity<TId>
             where TId : IEquatable<TId>
     {
-        //ILiteDatabaseAccessService _liteDatabaseAccessService =>
-        //DependencyService.Get<ILiteDatabaseAccessService>();
+        ILiteDBAccessService _liteDBAccessService =>
+            DependencyService.Get<ILiteDBAccessService>();
 
         /// <summary>
         /// string interpolation of the database file name based on the types of the entity and its primary key
@@ -31,12 +32,10 @@ namespace milkdrunk.Services
         {
             try
             {
-                var connection = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), filename);
-                using (var database = new LiteDatabase(connection))
-                {
-                    var collection = database.GetCollection<TEntity>();
-                    action?.Invoke(collection);
-                }
+                var connection = await _liteDBAccessService.ConnectionAsync(filename);
+                using var database = new LiteDatabase(connection);
+                var collection = database.GetCollection<TEntity>();
+                action?.Invoke(collection);
             }
             catch (Exception e) { Log.Fatal(e.Message); }
         }
@@ -46,12 +45,10 @@ namespace milkdrunk.Services
         {
             try
             {
-                var connection = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), filename);
-                using (var database = new LiteDatabase(connection))
-                {
-                    var collection = database.GetCollection<TEntity>();
-                    return await function.Invoke(collection);
-                }
+                var connection = await _liteDBAccessService.ConnectionAsync(filename);
+                using var database = new LiteDatabase(connection);
+                var collection = database.GetCollection<TEntity>();
+                return await function.Invoke(collection);
             }
             catch (Exception e) { Log.Fatal(e.Message); }
             return default;

@@ -1,9 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using milkdrunk.Views;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace milkdrunk.ViewModels
 {
     public class ChangingViewModel : BaseViewModel
     {
+        ILiteDBService<Baby, string> _babyContext =>
+            DependencyService.Get<ILiteDBService<Baby, string>>();
+
         public ChangingViewModel()
         {
         }
@@ -28,6 +35,25 @@ namespace milkdrunk.ViewModels
                 changings = value;
                 OnPropertyChanged();
             }
+        }
+
+        Baby baby;
+        public Baby Baby
+        {
+            get => baby;
+            set
+            {
+                baby = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public async Task OnAppearingAsync()
+        {
+            var babies = await _babyContext.FindAllAsync();
+            Baby = babies.FirstOrDefault();
+            if (Baby == null)
+                await Shell.Current.Navigation.PushAsync(new NewBabyPage());
         }
     }
 }

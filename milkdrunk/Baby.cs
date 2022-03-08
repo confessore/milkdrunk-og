@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace milkdrunk
 {
-    internal class Baby
+    public class Baby : Entity<string>
     {
         public string? Name { get; set; }
         public DateTime BirthDate { get; set; }
