@@ -12,13 +12,15 @@ namespace milkdrunk.Views
             {
                 Children = {
                     new Label() { Text = "let's add a new baby!" },
-                    new Entry() { Placeholder = "name" },
+                    new Entry() { Placeholder = "name" }
+                        .Margins(5, 1, 5, 1),
                     new Label() { Text = "birthday" },
-                    new DatePicker(),
+                    new DatePicker()
+                        .Margins(5, 1, 5, 1),
                     new Button() { Text = "confirm" }
                         .Margins(5, 1, 5, 1)
                         .Paddings(5, 1, 5, 1)
-                        .Bottom(),
+                        .BindTapGesture(nameof(_vm.ConfirmCommand))
                 }
             };
         }

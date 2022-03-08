@@ -1,10 +1,13 @@
 ﻿using System;
+using Xamarin.Forms;
+
 namespace milkdrunk.ViewModels
 {
     public class NewBabyViewModel : BaseViewModel
     {
         public NewBabyViewModel()
         {
+            ConfirmCommand = new Command(Confirm);
         }
 
         string? name;
@@ -26,6 +29,20 @@ namespace milkdrunk.ViewModels
                 birthDate = value;
                 OnPropertyChanged();
             }
+        }
+
+        public Command? ConfirmCommand { get; }
+
+        void Confirm()
+        {
+            IsBusy = true;
+            var baby = new Baby()
+            {
+                Name = Name,
+                BirthDate = BirthDate
+            };
+            _babyContext.UpsertAsync(baby);
+            IsBusy = false;
         }
     }
 }

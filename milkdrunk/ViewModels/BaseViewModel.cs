@@ -1,9 +1,12 @@
 ﻿using milkdrunk.Models;
 using milkdrunk.Services;
+using milkdrunk.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace milkdrunk.ViewModels
@@ -11,6 +14,8 @@ namespace milkdrunk.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public ILiteDBService<Baby, string> _babyContext =>
+            DependencyService.Get<ILiteDBService<Baby, string>>();
 
         bool isBusy = false;
         public bool IsBusy
@@ -24,6 +29,25 @@ namespace milkdrunk.ViewModels
         {
             get { return title; }
             set { SetProperty(ref title, value); }
+        }
+
+        Baby baby;
+        public Baby Baby
+        {
+            get => baby;
+            set
+            {
+                baby = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public async Task OnAppearingAsync()
+        {
+            var babies = await _babyContext.FindAllAsync();
+            Baby = babies.FirstOrDefault();
+            if (Baby == null)
+                await Shell.Current.Navigation.PushAsync(new NewBabyPage());
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value,

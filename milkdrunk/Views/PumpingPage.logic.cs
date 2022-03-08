@@ -12,5 +12,11 @@ namespace milkdrunk.Views
             BindingContext = _vm = new PumpingViewModel();
             Build();
         }
+
+        protected override async void OnAppearing()
+        {
+            await _vm.OnAppearingAsync();
+            base.OnAppearing();
+        }
     }
 }

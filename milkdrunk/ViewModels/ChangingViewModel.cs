@@ -36,24 +36,5 @@ namespace milkdrunk.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        Baby baby;
-        public Baby Baby
-        {
-            get => baby;
-            set
-            {
-                baby = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public async Task OnAppearingAsync()
-        {
-            var babies = await _babyContext.FindAllAsync();
-            Baby = babies.FirstOrDefault();
-            if (Baby == null)
-                await Shell.Current.Navigation.PushAsync(new NewBabyPage());
-        }
     }
 }
