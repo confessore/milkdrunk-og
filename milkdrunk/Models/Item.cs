@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace milkdrunk.Models
+﻿namespace milkdrunk.Models
 {
     public class Item
     {

@@ -1,19 +1,21 @@
-﻿using milkdrunk.ViewModels;
-using System;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace milkdrunk.Views
 {
     public partial class PumpingPage
     {
-        PumpingViewModel _vm;
-
-        public PumpingPage()
+        void Build()
         {
-            BindingContext = _vm = new PumpingViewModel();
-            Build();
+            Content = new StackLayout
+            {
+                Children = {
+                    new Label() { Text = "pumping" },
+                    new TimePicker(),
+                    new Label() { Text = "comments" },
+                    new Entry()
+
+                }
+            };
         }
     }
 }
-

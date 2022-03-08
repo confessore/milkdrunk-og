@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using milkdrunk.ViewModels;
 using Xamarin.Forms;
 
 namespace milkdrunk.Views
 {
     public partial class SleepingPage : ContentPage
     {
-        void Build()
+        SleepingViewModel _vm;
+
+        public SleepingPage()
         {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "sleeping" }
-                }
-            };
+            BindingContext = _vm = new SleepingViewModel();
+            Build();
         }
     }
 }
+

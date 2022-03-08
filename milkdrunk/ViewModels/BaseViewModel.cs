@@ -1,12 +1,10 @@
-﻿using System;
+﻿using milkdrunk.Models;
+using milkdrunk.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
-
-using milkdrunk.Models;
-using milkdrunk.Services;
 
 namespace milkdrunk.ViewModels
 {

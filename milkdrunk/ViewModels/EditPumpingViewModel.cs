@@ -1,5 +1,4 @@
-﻿using System;
-namespace milkdrunk.ViewModels
+﻿namespace milkdrunk.ViewModels
 {
     public class EditPumpingViewModel : BaseViewModel
     {

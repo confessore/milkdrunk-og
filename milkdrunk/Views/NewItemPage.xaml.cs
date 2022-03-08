@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using milkdrunk.Models;
+﻿using milkdrunk.Models;
 using milkdrunk.ViewModels;
+using Xamarin.Forms;
 
 namespace milkdrunk.Views
 {

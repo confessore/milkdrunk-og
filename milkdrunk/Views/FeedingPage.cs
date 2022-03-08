@@ -1,19 +1,19 @@
-﻿using milkdrunk.ViewModels;
-using System;
-
+﻿using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
 namespace milkdrunk.Views
 {
-    public partial class FeedingPage
+    public partial class FeedingPage : ContentPage
     {
-        FeedingViewModel _vm;
-
-        public FeedingPage()
+        void Build()
         {
-            BindingContext = _vm = new FeedingViewModel();
-            Build();
+            Content = new StackLayout
+            {
+                Children = {
+                    new Label { Text = "feeding" }
+                        .CenterHorizontal()
+                }
+            };
         }
     }
 }
-

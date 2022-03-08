@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Timers;
+﻿using System.Timers;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;

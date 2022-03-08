@@ -1,8 +1,5 @@
-﻿using System;
+﻿using milkdrunk.Services;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using milkdrunk.Services;
-using milkdrunk.Views;
 
 namespace milkdrunk
 {

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using milkdrunk.ViewModels;
-using milkdrunk.Views;
+﻿using milkdrunk.Views;
 using Xamarin.Forms;
 
 namespace milkdrunk
 {
-    public partial class AppShell : Xamarin.Forms.Shell
+    public partial class AppShell : Shell
     {
         public AppShell()
         {

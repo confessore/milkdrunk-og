@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using milkdrunk.ViewModels;
 
 namespace milkdrunk.Views
 {
-    public partial class FeedingPage : ContentPage
+    public partial class FeedingPage
     {
-        void Build()
+        FeedingViewModel _vm;
+
+        public FeedingPage()
         {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "feeding" }
-                }
-            };
+            BindingContext = _vm = new FeedingViewModel();
+            Build();
         }
     }
 }

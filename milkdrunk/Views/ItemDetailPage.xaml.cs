@@ -1,6 +1,5 @@
-﻿using System.ComponentModel;
+﻿using milkdrunk.ViewModels;
 using Xamarin.Forms;
-using milkdrunk.ViewModels;
 
 namespace milkdrunk.Views
 {

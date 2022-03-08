@@ -1,19 +1,23 @@
-﻿using milkdrunk.ViewModels;
-using System;
-
+﻿using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
 namespace milkdrunk.Views
 {
     public partial class ChangingPage
     {
-        ChangingViewModel _vm;
-
-        public ChangingPage()
+        void Build()
         {
-            BindingContext = _vm = new ChangingViewModel();
-            Build();
+            Content = new StackLayout
+            {
+                Children = {
+                    new Label
+                    {
+                        Text = "changing"
+                    }.CenterHorizontal()
+                    ,
+
+                }
+            };
         }
     }
 }
-

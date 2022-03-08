@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using milkdrunk.Models;
 using Xamarin.Forms;
 
 namespace milkdrunk.ViewModels
