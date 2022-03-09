@@ -47,8 +47,11 @@ namespace milkdrunk.ViewModels
         public override async Task OnAppearingAsync()
         {
             await base.OnAppearingAsync();
-            Name = Baby!.Name;
-            BirthDate = Baby!.BirthDate;
+            if (Baby != null)
+            {
+                Name = Baby!.Name;
+                BirthDate = Baby!.BirthDate;
+            }
         }
     }
 }
