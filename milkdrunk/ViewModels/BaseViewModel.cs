@@ -42,7 +42,7 @@ namespace milkdrunk.ViewModels
             }
         }
 
-        public async Task OnAppearingAsync()
+        public virtual async Task OnAppearingAsync()
         {
             var babies = await _babyContext.FindAllAsync();
             Baby = babies.FirstOrDefault();
