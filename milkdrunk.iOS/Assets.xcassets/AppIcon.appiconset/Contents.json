@@ -1,37 +1,37 @@
 {
   "images": [
     {
-      "filename": "Icon40.png",
+      "filename": "milkdrunk40.png",
       "size": "20x20",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
-      "filename": "Icon60.png",
+      "filename": "milkdrunk60.png",
       "size": "20x20",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
-      "filename": "Icon58.png",
+      "filename": "milkdrunk58.png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
-      "filename": "Icon87.png",
+      "filename": "milkdrunk87.png",
       "size": "29x29",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
-      "filename": "Icon80.png",
+      "filename": "milkdrunk80.png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
-      "filename": "Icon120.png",
+      "filename": "milkdrunk120-1.png",
       "size": "40x40",
       "scale": "3x",
       "idiom": "iphone"
@@ -49,55 +49,55 @@
       "idiom": "iphone"
     },
     {
-      "filename": "Icon20.png",
+      "filename": "milkdrunk20.png",
       "size": "20x20",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon40.png",
+      "filename": "milkdrunk40-1.png",
       "size": "20x20",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon29.png",
+      "filename": "milkdrunk29.png",
       "size": "29x29",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon58.png",
+      "filename": "milkdrunk58-1.png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon40.png",
+      "filename": "milkdrunk40-2.png",
       "size": "40x40",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon80.png",
+      "filename": "milkdrunk80-1.png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon167.png",
+      "filename": "milkdrunk167.png",
       "size": "83.5x83.5",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon76.png",
+      "filename": "milkdrunk76.png",
       "size": "76x76",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
-      "filename": "Icon152.png",
+      "filename": "milkdrunk152.png",
       "size": "76x76",
       "scale": "2x",
       "idiom": "ipad"
