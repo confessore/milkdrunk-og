@@ -13,14 +13,16 @@ namespace milkdrunk.Views
                 Children = {
                     new Label() { Text = "let's add a new baby!" },
                     new Entry() { Placeholder = "name" }
-                        .Margins(5, 1, 5, 1),
+                        .Margins(5, 5, 5, 5)
+                        .Bind(Entry.TextProperty, nameof(_vm.Name)),
                     new Label() { Text = "birthday" },
                     new DatePicker()
-                        .Margins(5, 1, 5, 1),
+                        .Margins(5, 5, 5, 5)
+                        .Bind(DatePicker.DateProperty, nameof(_vm.BirthDate)),
                     new Button() { Text = "confirm" }
-                        .Margins(5, 1, 5, 1)
-                        .Paddings(5, 1, 5, 1)
-                        .BindTapGesture(nameof(_vm.ConfirmCommand))
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .Bind(Button.CommandProperty, nameof(_vm.ConfirmCommand))
                 }
             };
         }

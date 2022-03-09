@@ -24,15 +24,15 @@ namespace milkdrunk.ViewModels
             set { SetProperty(ref isBusy, value); }
         }
 
-        string title = string.Empty;
-        public string Title
+        string? title = string.Empty;
+        public string? Title
         {
             get { return title; }
             set { SetProperty(ref title, value); }
         }
 
-        Baby baby;
-        public Baby Baby
+        Baby? baby;
+        public Baby? Baby
         {
             get => baby;
             set
@@ -48,6 +48,8 @@ namespace milkdrunk.ViewModels
             Baby = babies.FirstOrDefault();
             if (Baby == null)
                 await Shell.Current.Navigation.PushAsync(new NewBabyPage());
+            else
+                Title = $"{Baby!.Name!} | {(DateTime.Now - Baby!.BirthDate!).Days / 7} weeks, {(DateTime.Now - Baby!.BirthDate!).Days%7} days old";
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value,

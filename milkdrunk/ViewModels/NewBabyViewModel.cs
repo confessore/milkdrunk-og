@@ -38,6 +38,7 @@ namespace milkdrunk.ViewModels
             IsBusy = true;
             var baby = new Baby()
             {
+                Id = Guid.NewGuid().ToString(),
                 Name = Name,
                 BirthDate = BirthDate
             };

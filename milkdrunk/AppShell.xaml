@@ -26,6 +26,9 @@
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <!--<Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#bdacd1" />
+            </Style>-->
         </ResourceDictionary>
     </Shell.Resources>
 

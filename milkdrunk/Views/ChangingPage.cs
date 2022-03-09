@@ -7,7 +7,6 @@ namespace milkdrunk.Views
     {
         void Build()
         {
-            Title = "changing";
             Content = new StackLayout
             {
                 Children = {
