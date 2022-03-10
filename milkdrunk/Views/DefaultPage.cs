@@ -16,10 +16,15 @@ namespace milkdrunk.Views
                     new Button() { Text = "switch babies" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
-                    new Entry() { Placeholder = "name" }
+                    new Label() { Text = "name" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5),
+                    new Entry()
                         .Margins(5, 5, 5, 5)
                         .Bind(Entry.TextProperty, nameof(_vm.Name)),
-                    new Label() { Text = "birthday" },
+                    new Label() { Text = "birthday" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5),
                     new DatePicker()
                         .Margins(5, 5, 5, 5)
                         .Bind(DatePicker.DateProperty, nameof(_vm.Baby.BirthDate)),
