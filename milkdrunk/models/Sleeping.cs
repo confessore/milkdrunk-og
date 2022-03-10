@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace milkdrunk
+namespace milkdrunk.models
 {
     public class Sleeping
     {

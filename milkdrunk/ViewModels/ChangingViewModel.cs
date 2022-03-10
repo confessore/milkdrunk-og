@@ -1,16 +1,10 @@
-﻿using milkdrunk.Views;
+﻿using milkdrunk.models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xamarin.Forms;
 
 namespace milkdrunk.ViewModels
 {
     public class ChangingViewModel : BaseViewModel
     {
-        ILiteDBService<Baby, string> _babyContext =>
-            DependencyService.Get<ILiteDBService<Baby, string>>();
-
         public ChangingViewModel()
         {
         }

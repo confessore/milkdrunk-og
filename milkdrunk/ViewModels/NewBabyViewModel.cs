@@ -1,4 +1,5 @@
-﻿using System;
+﻿using milkdrunk.models;
+using System;
 using Xamarin.Forms;
 
 namespace milkdrunk.ViewModels

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 using milkdrunk.iOS.Services;
-using milkdrunk.Services.Interfaces;
+using milkdrunk.services.interfaces;
 using milkdrunk.statics;
 
 [assembly: Xamarin.Forms.Dependency(typeof(LiteDBAccessService))]

@@ -1,4 +1,4 @@
-﻿using milkdrunk.Models;
+﻿using milkdrunk.models;
 using System;
 using Xamarin.Forms;
 
@@ -6,7 +6,7 @@ namespace milkdrunk.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string text;
+        /*private string text;
         private string description;
 
         public NewItemViewModel()
@@ -58,5 +58,6 @@ namespace milkdrunk.ViewModels
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
         }
+        */
     }
 }

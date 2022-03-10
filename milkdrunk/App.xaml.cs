@@ -1,5 +1,6 @@
-﻿using milkdrunk.Services;
-using milkdrunk.Services.Interfaces;
+﻿using milkdrunk.models;
+using milkdrunk.services;
+using milkdrunk.services.interfaces;
 using milkdrunk.Views;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -11,7 +12,7 @@ namespace milkdrunk
         public App()
         {
             InitializeComponent();
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
         }
 
         protected override async void OnStart()

@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace milkdrunk.Views
 {
-    public partial class FeedingPage : ContentPage
+    public partial class FeedingPage
     {
         void Build()
         {

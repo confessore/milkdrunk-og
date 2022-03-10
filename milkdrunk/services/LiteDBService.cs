@@ -1,5 +1,7 @@
 ﻿using LiteDB;
-using milkdrunk.Services.Interfaces;
+using milkdrunk.extensions;
+using milkdrunk.models.abstractions;
+using milkdrunk.services.interfaces;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.Services
+namespace milkdrunk.services
 {
     /// <inheritdoc cref="ILiteDBService{T, U}" />
     public sealed class LiteDBService<TEntity, TId> : ILiteDBService<TEntity, TId>

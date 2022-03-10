@@ -1,7 +1,8 @@
-﻿using System;
+﻿using milkdrunk.models.abstractions;
+using System;
 using System.Collections.Generic;
 
-namespace milkdrunk
+namespace milkdrunk.models
 {
     public class Baby : Entity<string>
     {

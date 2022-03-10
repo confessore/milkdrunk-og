@@ -1,11 +1,12 @@
 ﻿using LiteDB;
+using milkdrunk.models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace milkdrunk
+namespace milkdrunk.services.interfaces
 {
     /// <summary>
     /// a service for interfacing with the local database
@@ -13,7 +14,7 @@ namespace milkdrunk
     /// <typeparam name="TEntity">the entity type of the table</typeparam>
     /// <typeparam name="TId">the primary key type of the entity</typeparam>
     public interface ILiteDBService<TEntity, TId>
-            where TEntity : Entity<TId>
+            where TEntity : IEntity<TId>
             where TId : IEquatable<TId>
     {
         /// <summary>

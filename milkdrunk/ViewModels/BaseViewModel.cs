@@ -1,5 +1,5 @@
-﻿using milkdrunk.Models;
-using milkdrunk.Services;
+﻿using milkdrunk.models;
+using milkdrunk.services.interfaces;
 using milkdrunk.Views;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,6 @@ namespace milkdrunk.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
         public ILiteDBService<Baby, string> _babyContext =>
             DependencyService.Get<ILiteDBService<Baby, string>>();
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace milkdrunk
+namespace milkdrunk.models.interfaces
 {
     public interface IEntity<T>
         where T : IEquatable<T>

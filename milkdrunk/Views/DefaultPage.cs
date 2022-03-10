@@ -20,14 +20,14 @@ namespace milkdrunk.Views
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
                     new Entry()
-                        .Margins(5, 5, 5, 5)
-                        .Bind(Entry.TextProperty, nameof(_vm.Name)),
+                        .Margins(5, 5, 5, 5),
+                        //.Bind(Entry.TextProperty, nameof(_vm.Name)),
                     new Label() { Text = "birthday" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
                     new DatePicker()
-                        .Margins(5, 5, 5, 5)
-                        .Bind(DatePicker.DateProperty, nameof(_vm.Baby.BirthDate)),
+                        .Margins(5, 5, 5, 5),
+                        //.Bind(DatePicker.DateProperty, nameof(_vm.Baby.BirthDate)),
                     new Button() { Text = "confirm" }
                         .Margins(5, 1, 5, 1)
                         .Paddings(5, 1, 5, 1)

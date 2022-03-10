@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace milkdrunk.Services.Interfaces
+namespace milkdrunk.services.interfaces
 {
     public interface ILiteDBAccessService
     {

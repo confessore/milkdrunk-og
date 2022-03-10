@@ -1,6 +1,7 @@
-﻿using System;
+﻿using milkdrunk.models.enums;
+using System;
 
-namespace milkdrunk
+namespace milkdrunk.models
 {
     public class Feeding
     {

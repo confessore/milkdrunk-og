@@ -4,10 +4,10 @@ using Xamarin.Forms;
 
 namespace milkdrunk.ViewModels
 {
-    [QueryProperty(nameof(ItemId), nameof(ItemId))]
+    //[QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ItemDetailViewModel : BaseViewModel
     {
-        private string itemId;
+        /*private string itemId;
         private string text;
         private string description;
         public string Id { get; set; }
@@ -51,5 +51,6 @@ namespace milkdrunk.ViewModels
                 Debug.WriteLine("Failed to Load Item");
             }
         }
+        */
     }
 }

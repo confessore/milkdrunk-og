@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using milkdrunk.models;
+using System.Collections.ObjectModel;
 
 namespace milkdrunk.ViewModels
 {

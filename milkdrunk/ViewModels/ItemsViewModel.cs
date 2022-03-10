@@ -1,4 +1,4 @@
-﻿using milkdrunk.Models;
+﻿using milkdrunk.models;
 using milkdrunk.Views;
 using System;
 using System.Collections.ObjectModel;
@@ -10,7 +10,7 @@ namespace milkdrunk.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        /*private Item _selectedItem;
 
         public ObservableCollection<Item> Items { get; }
         public Command LoadItemsCommand { get; }
@@ -80,5 +80,6 @@ namespace milkdrunk.ViewModels
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
         }
+        */
     }
 }

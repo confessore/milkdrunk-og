@@ -1,8 +1,9 @@
 ﻿using milkdrunk.ViewModels;
+using Xamarin.Forms;
 
 namespace milkdrunk.Views
 {
-    public partial class FeedingPage
+    public partial class FeedingPage : ContentPage
     {
         FeedingViewModel _vm;
 
@@ -14,8 +15,8 @@ namespace milkdrunk.Views
 
         protected override async void OnAppearing()
         {
-            await _vm.OnAppearingAsync();
             base.OnAppearing();
+            await _vm.OnAppearingAsync();
         }
     }
 }
