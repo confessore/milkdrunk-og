@@ -51,7 +51,7 @@ namespace milkdrunk.viewmodels
             if (await _babyContext.AnyAsync())
                 App.Current.MainPage = new AppShell();
             else
-                App.Current.MainPage = new NewBabyPage();
+                App.Current.MainPage = new WelcomePage();
         }
     }
 }
