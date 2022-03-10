@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using milkdrunk.Views;
 using Xamarin.Forms;
 
 namespace milkdrunk.ViewModels
@@ -46,12 +47,10 @@ namespace milkdrunk.ViewModels
 
         public override async Task OnAppearingAsync()
         {
-            await base.OnAppearingAsync();
-            if (Baby != null)
-            {
-                Name = Baby!.Name;
-                BirthDate = Baby!.BirthDate;
-            }
+            if (await _babyContext.AnyAsync())
+                App.Current.MainPage = new AppShell();
+            else
+                App.Current.MainPage = new NewBabyPage();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using milkdrunk.Services;
 using milkdrunk.Services.Interfaces;
+using milkdrunk.Views;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -19,7 +20,7 @@ namespace milkdrunk
             // this will have to be moved back into the constructor
             // when migrated to net maui
             // the renderer will crash otherwise
-            MainPage = new AppShell();
+            MainPage = new DefaultPage();
         }
 
         protected override void OnSleep()

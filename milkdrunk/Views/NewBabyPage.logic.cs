@@ -1,5 +1,7 @@
 ﻿using milkdrunk.ViewModels;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace milkdrunk.Views
 {
@@ -9,6 +11,7 @@ namespace milkdrunk.Views
 
         public NewBabyPage()
         {
+            On<iOS>().SetUseSafeArea(true);
             BindingContext = _vm = new NewBabyViewModel();
             Build();
         }

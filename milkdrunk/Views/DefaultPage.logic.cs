@@ -17,7 +17,7 @@ namespace milkdrunk.Views
         {
             base.OnAppearing();
             await _vm.OnAppearingAsync();
-            Title = _vm.Title;
+            //Title = _vm.Title;
         }
     }
 }
