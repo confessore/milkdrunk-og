@@ -1,7 +1,7 @@
 ﻿using milkdrunk.models;
 using milkdrunk.services;
 using milkdrunk.services.interfaces;
-using milkdrunk.Views;
+using milkdrunk.views;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 

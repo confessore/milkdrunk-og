@@ -1,7 +1,7 @@
 ﻿using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.Views
+namespace milkdrunk.views
 {
     public partial class ChangingPage
     {

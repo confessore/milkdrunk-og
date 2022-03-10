@@ -1,4 +1,4 @@
-﻿using milkdrunk.Views;
+﻿using milkdrunk.views;
 using Xamarin.Forms;
 
 namespace milkdrunk

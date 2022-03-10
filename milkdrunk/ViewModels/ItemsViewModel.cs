@@ -1,12 +1,12 @@
 ﻿using milkdrunk.models;
-using milkdrunk.Views;
+using milkdrunk.views;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.ViewModels
+namespace milkdrunk.viewmodels
 {
     public class ItemsViewModel : BaseViewModel
     {

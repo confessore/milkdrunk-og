@@ -2,7 +2,7 @@
 using System;
 using Xamarin.Forms;
 
-namespace milkdrunk.ViewModels
+namespace milkdrunk.viewmodels
 {
     public class NewItemViewModel : BaseViewModel
     {

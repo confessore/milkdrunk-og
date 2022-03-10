@@ -1,9 +1,9 @@
-﻿using milkdrunk.ViewModels;
+﻿using milkdrunk.viewmodels;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
-namespace milkdrunk.Views
+namespace milkdrunk.views
 {
     public partial class NewBabyPage : ContentPage
     {

@@ -3,7 +3,7 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace milkdrunk.ViewModels
+namespace milkdrunk.viewmodels
 {
     public class AboutViewModel : BaseViewModel
     {

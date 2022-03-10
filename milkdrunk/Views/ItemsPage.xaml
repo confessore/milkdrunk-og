@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="milkdrunk.Views.ItemsPage"
+             x:Class="milkdrunk.views.ItemsPage"
              Title="{Binding Title}"
-             xmlns:local="clr-namespace:milkdrunk.ViewModels"  
+             xmlns:local="clr-namespace:milkdrunk.viewmodels"  
              xmlns:model="clr-namespace:milkdrunk.Models"  
              x:Name="BrowseItemsPage">
 

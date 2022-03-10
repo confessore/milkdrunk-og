@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using milkdrunk.models;
-using milkdrunk.Views;
+using milkdrunk.views;
 using Xamarin.Forms;
 
-namespace milkdrunk.ViewModels
+namespace milkdrunk.viewmodels
 {
     public class DefaultViewModel : BaseViewModel
     {

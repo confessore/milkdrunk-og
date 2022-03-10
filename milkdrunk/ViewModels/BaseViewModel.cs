@@ -1,6 +1,6 @@
 ﻿using milkdrunk.models;
 using milkdrunk.services.interfaces;
-using milkdrunk.Views;
+using milkdrunk.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.ViewModels
+namespace milkdrunk.viewmodels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

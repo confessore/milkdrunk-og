@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace milkdrunk.Views
+namespace milkdrunk.views
 {
     public partial class PumpingPage
     {

@@ -1,7 +1,7 @@
 ﻿using milkdrunk.models;
 using System.Collections.ObjectModel;
 
-namespace milkdrunk.ViewModels
+namespace milkdrunk.viewmodels
 {
     public class ChangingDetailViewModel : BaseViewModel
     {

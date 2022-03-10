@@ -1,7 +1,7 @@
-﻿using milkdrunk.Views;
+﻿using milkdrunk.views;
 using Xamarin.Forms;
 
-namespace milkdrunk.ViewModels
+namespace milkdrunk.viewmodels
 {
     public class LoginViewModel : BaseViewModel
     {

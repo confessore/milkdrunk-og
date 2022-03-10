@@ -1,4 +1,4 @@
-﻿namespace milkdrunk.ViewModels
+﻿namespace milkdrunk.viewmodels
 {
     public class PumpingDetailViewModel : BaseViewModel
     {

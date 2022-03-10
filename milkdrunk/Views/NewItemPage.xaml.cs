@@ -1,8 +1,8 @@
 ﻿using milkdrunk.models;
-using milkdrunk.ViewModels;
+using milkdrunk.viewmodels;
 using Xamarin.Forms;
 
-namespace milkdrunk.Views
+namespace milkdrunk.views
 {
     public partial class NewItemPage : ContentPage
     {

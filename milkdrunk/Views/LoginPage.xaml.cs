@@ -1,8 +1,8 @@
-﻿using milkdrunk.ViewModels;
+﻿using milkdrunk.viewmodels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace milkdrunk.Views
+namespace milkdrunk.views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
