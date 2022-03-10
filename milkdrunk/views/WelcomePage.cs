@@ -11,14 +11,22 @@ namespace milkdrunk.views
             Content = new StackLayout
             {
                 Children = {
-                    new Label() { Text = AppResources.welcome },
-                    new Button() { Text = "add a new baby" }
+                    new Image() { Source = "milkdrunk120.png" }
                         .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                    new Button() { Text = "switch babies" }
+                        .CenterHorizontal(),
+                    new Label() { Text = AppResources.welcome }
                         .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                    new Label() { Text = "name" }
+                        .Paddings(5, 5, 5, 5)
+                        .CenterHorizontal(),
+                    new Label() { Text = "some additional information is required to proceed"}
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .CenterHorizontal(),
+                    new Label() { Text = "we do not sell your private information" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .CenterHorizontal(),
+                    new Label() { Text = "caregiver name" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
                     new Entry()

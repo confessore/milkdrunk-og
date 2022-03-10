@@ -1,6 +1,9 @@
-﻿namespace milkdrunk.models
+﻿using milkdrunk.models.abstractions;
+
+namespace milkdrunk.models
 {
-    internal class Caregiver
+    public class Caregiver : Entity<string>
     {
+        public string? Name { get; set; }
     }
 }
