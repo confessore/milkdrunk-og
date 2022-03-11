@@ -172,4 +172,43 @@
       </ReferenceSourceTarget>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\milkdrunk80.png" />
+  </ItemGroup>
 </Project>
