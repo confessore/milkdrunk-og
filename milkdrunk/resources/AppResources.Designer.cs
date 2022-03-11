@@ -61,6 +61,33 @@ namespace milkdrunk.resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to confirm.
+        /// </summary>
+        public static string button_confirm {
+            get {
+                return ResourceManager.GetString("button_confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to what is your name?.
+        /// </summary>
+        public static string caregiver_name {
+            get {
+                return ResourceManager.GetString("caregiver_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to some additional information is required to proceed. we do not sell your private information.
+        /// </summary>
+        public static string information {
+            get {
+                return ResourceManager.GetString("information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to welcome! we&apos;re stoked that you decided to check us out.
         /// </summary>
         public static string welcome {

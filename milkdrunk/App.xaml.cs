@@ -35,6 +35,8 @@ namespace milkdrunk
         Task RegisterServicesAsync()
         {
             DependencyService.Register<ILiteDBAccessService>();
+            DependencyService.Register<ILiteDBService<Caregiver, string>, LiteDBService<Caregiver, string>>();
+            DependencyService.Register<ILiteDBService<Caregroup, string>, LiteDBService<Caregroup, string>>();
             DependencyService.Register<ILiteDBService<Baby, string>, LiteDBService<Baby, string>>();
             return Task.CompletedTask;
         }

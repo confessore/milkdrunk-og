@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using Xamarin.Forms;
-
-namespace milkdrunk.viewmodels
+﻿namespace milkdrunk.viewmodels
 {
     //[QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ItemDetailViewModel : BaseViewModel

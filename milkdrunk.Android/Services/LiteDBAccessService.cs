@@ -1,8 +1,8 @@
-﻿using System;
+﻿using milkdrunk.Droid.Services;
+using milkdrunk.services.interfaces;
+using System;
 using System.IO;
 using System.Threading.Tasks;
-using milkdrunk.Droid.Services;
-using milkdrunk.services.interfaces;
 
 [assembly: Xamarin.Forms.Dependency(typeof(LiteDatabaseAccessService))]
 namespace milkdrunk.Droid.Services

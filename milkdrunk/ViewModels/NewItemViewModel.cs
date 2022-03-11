@@ -1,8 +1,4 @@
-﻿using milkdrunk.models;
-using System;
-using Xamarin.Forms;
-
-namespace milkdrunk.viewmodels
+﻿namespace milkdrunk.viewmodels
 {
     public class NewItemViewModel : BaseViewModel
     {

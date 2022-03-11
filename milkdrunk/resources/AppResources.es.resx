@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="button_confirm" xml:space="preserve">
+    <value>confirmar</value>
+  </data>
+  <data name="caregiver_name" xml:space="preserve">
+    <value>cual es tu nombre?</value>
+  </data>
+  <data name="information" xml:space="preserve">
+    <value>un poco información addicional es necesario. nosotros no vendemos su información</value>
+  </data>
   <data name="welcome" xml:space="preserve">
-    <value>¡bienvenidos! estamos avivado porque tú decidiste mirarnos</value>
+    <value>¡bienvenidos! estamos avivado porque tu decidiste mirarnos</value>
   </data>
 </root>

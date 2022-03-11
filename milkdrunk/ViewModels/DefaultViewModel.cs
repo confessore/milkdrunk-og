@@ -1,57 +1,26 @@
-﻿using System;
-using System.Threading.Tasks;
-using milkdrunk.models;
+﻿using milkdrunk.models;
 using milkdrunk.views;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
 {
     public class DefaultViewModel : BaseViewModel
     {
-        string? name;
-        public string? Name
-        {
-            get => name;
-            set
-            {
-                name = value;
-                Baby!.Name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        DateTime birthDate;
-        public DateTime BirthDate
-        {
-            get => birthDate;
-            set
-            {
-                birthDate = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Command? ConfirmCommand { get; }
-
-        void Confirm()
+        new public virtual async Task OnAppearingAsync()
         {
             IsBusy = true;
-            var baby = new Baby()
+            var caregivers = await _caregiverContext.FindAllAsync();
+            if (caregivers != null && caregivers.Any())
             {
-                Id = Guid.NewGuid().ToString(),
-                Name = Name,
-                BirthDate = BirthDate
-            };
-            _babyContext.UpsertAsync(baby);
-            IsBusy = false;
-        }
-
-        public override async Task OnAppearingAsync()
-        {
-            if (await _babyContext.AnyAsync())
+                await Task.Delay(1000);
                 App.Current.MainPage = new AppShell();
+            }
             else
                 App.Current.MainPage = new WelcomePage();
+            IsBusy = false;
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using milkdrunk.models;
-using milkdrunk.viewmodels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace milkdrunk.views
 {

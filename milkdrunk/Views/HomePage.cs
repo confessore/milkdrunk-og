@@ -10,28 +10,16 @@ namespace milkdrunk.views
             Content = new StackLayout
             {
                 Children = {
-                    new Button() { Text = "add a new baby" }
+                    new Label() { Text = $"welcome, {_vm.Caregiver!.Name}" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .CenterHorizontal(),
+                    new Button() { Text = "view caregroups" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
-                    new Button() { Text = "switch babies" }
+                    new Button() { Text = "caregiver settings" }
                         .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                    new Label() { Text = "name" }
-                        .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                    new Entry()
-                        .Margins(5, 5, 5, 5),
-                        //.Bind(Entry.TextProperty, nameof(_vm.Name)),
-                    new Label() { Text = "birthday" }
-                        .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                    new DatePicker()
-                        .Margins(5, 5, 5, 5),
-                        //.Bind(DatePicker.DateProperty, nameof(_vm.Baby.BirthDate)),
-                    new Button() { Text = "confirm" }
-                        .Margins(5, 1, 5, 1)
-                        .Paddings(5, 1, 5, 1)
-                        //.Bind(Button.CommandProperty, nameof(_vm.ConfirmCommand))
+                        .Paddings(5, 5, 5, 5)
                 }
             };
         }
