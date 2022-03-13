@@ -40,6 +40,8 @@ namespace milkdrunk.views
                                 }
                             })
                     }
+                    .Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedBaby))
+                    .Bind(CollectionView.SelectionChangedCommandProperty, nameof(_vm.OnBabySelectionChangedCommand))
                     .Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Babies))
                 }
             };

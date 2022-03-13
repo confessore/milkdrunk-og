@@ -12,6 +12,7 @@ namespace milkdrunk.viewmodels
         public MyBabiesViewModel()
         {
             NewBabyCommand = new Command(NewBaby);
+            OnBabySelectionChangedCommand = new Command(OnBabySelectionChanged);
         }
 
         ObservableCollection<Baby>? babies;
@@ -25,12 +26,32 @@ namespace milkdrunk.viewmodels
             }
         }
 
+        Baby? selectedBaby;
+        public Baby? SelectedBaby
+        {
+            get => selectedBaby;
+            set
+            {
+                selectedBaby = value;
+                OnPropertyChanged();
+            }
+        }
+
         public Command? NewBabyCommand { get; }
 
         async void NewBaby()
         {
             IsBusy = true;
-                await Shell.Current.Navigation.PushAsync(new NewBabyPage());
+            await Shell.Current.Navigation.PushAsync(new NewBabyPage());
+            IsBusy = false;
+        }
+
+        public Command? OnBabySelectionChangedCommand { get; }
+
+        async void OnBabySelectionChanged()
+        {
+            IsBusy = true;
+            await Shell.Current.Navigation.PushAsync(new NewBabyPage());
             IsBusy = false;
         }
 
