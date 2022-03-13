@@ -18,8 +18,8 @@ namespace milkdrunk.services
             where TEntity : Entity<TId>
             where TId : IEquatable<TId>
     {
-        ILiteDBAccessService _liteDBAccessService =>
-            DependencyService.Get<ILiteDBAccessService>();
+        ILocalStorageAccessService _liteDBAccessService =>
+            DependencyService.Get<ILocalStorageAccessService>();
 
         /// <summary>
         /// string interpolation of the database file name based on the types of the entity and its primary key
@@ -34,7 +34,7 @@ namespace milkdrunk.services
         {
             try
             {
-                var connection = await _liteDBAccessService.ConnectionAsync(filename);
+                var connection = await _liteDBAccessService.FilePathAsync(filename);
                 using var database = new LiteDatabase(connection);
                 var collection = database.GetCollection<TEntity>();
                 action?.Invoke(collection);
@@ -47,7 +47,7 @@ namespace milkdrunk.services
         {
             try
             {
-                var connection = await _liteDBAccessService.ConnectionAsync(filename);
+                var connection = await _liteDBAccessService.FilePathAsync(filename);
                 using var database = new LiteDatabase(connection);
                 var collection = database.GetCollection<TEntity>();
                 return await function.Invoke(collection);

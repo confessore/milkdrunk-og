@@ -8,7 +8,7 @@ namespace milkdrunk.viewmodels
     {
         public NewBabyViewModel()
         {
-            ConfirmCommand = new Command(Confirm);
+            ConfirmCommand = new Command(ConfirmAsync);
         }
 
         string? name;
@@ -34,7 +34,7 @@ namespace milkdrunk.viewmodels
 
         public Command? ConfirmCommand { get; }
 
-        async void Confirm()
+        async void ConfirmAsync()
         {
             IsBusy = true;
             var baby = new Baby()
@@ -43,7 +43,7 @@ namespace milkdrunk.viewmodels
                 Name = Name,
                 BirthDate = BirthDate
             };
-            await _babyContext.UpsertAsync(baby);
+            //await _defaultService._babyContext.UpsertAsync(baby);
             await Shell.Current.Navigation.PopAsync();
             IsBusy = false;
         }

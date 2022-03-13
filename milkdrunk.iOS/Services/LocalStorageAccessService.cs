@@ -4,19 +4,19 @@ using milkdrunk.statics;
 using System.IO;
 using System.Threading.Tasks;
 
-[assembly: Xamarin.Forms.Dependency(typeof(LiteDBAccessService))]
+[assembly: Xamarin.Forms.Dependency(typeof(LocalStorageAccessService))]
 namespace milkdrunk.iOS.Services
 {
-    public sealed class LiteDBAccessService : ILiteDBAccessService
+    public sealed class LocalStorageAccessService : ILocalStorageAccessService
     {
-        public Task<string> ConnectionAsync(string filename)
+        public Task<string> FilePathAsync(string filename)
         {
             if (!Directory.Exists(Paths.CachesDirectory))
                 Directory.CreateDirectory(Paths.CachesDirectory);
             return Task.FromResult(Paths.CachesFile(filename));
         }
 
-        public string Connection(string filename) =>
-            ConnectionAsync(filename).Result;
+        public string FilePath(string filename) =>
+            FilePathAsync(filename).Result;
     }
 }

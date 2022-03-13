@@ -13,14 +13,11 @@ namespace milkdrunk.viewmodels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public ILiteDBService<Caregiver, string> _caregiverContext =>
-            DependencyService.Get<ILiteDBService<Caregiver, string>>();
+        public IDefaultService _defaultService =>
+            DependencyService.Get<IDefaultService>();
 
-        public ILiteDBService<Caregroup, string> _caregroupContext =>
-            DependencyService.Get<ILiteDBService<Caregroup, string>>();
-
-        public ILiteDBService<Baby, string> _babyContext =>
-            DependencyService.Get<ILiteDBService<Baby, string>>();
+        public ILocalStorageService _jsonStorageService =>
+            DependencyService.Get<ILocalStorageService>();
 
         bool isBusy = false;
         public bool IsBusy
@@ -36,7 +33,7 @@ namespace milkdrunk.viewmodels
             set { SetProperty(ref title, value); }
         }
 
-        Caregiver? caregiver;
+        Caregiver? caregiver = new Caregiver();
         public Caregiver? Caregiver
         {
             get => caregiver;
@@ -47,7 +44,7 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        Caregroup? caregroup;
+        Caregroup? caregroup = new Caregroup();
         public Caregroup? Caregroup
         {
             get => caregroup;
@@ -58,7 +55,7 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        Baby? baby;
+        Baby? baby = new Baby();
         public Baby? Baby
         {
             get => baby;
@@ -72,22 +69,10 @@ namespace milkdrunk.viewmodels
         public virtual async Task OnAppearingAsync()
         {
             IsBusy = true;
-            var caregivers = await _caregiverContext.FindAllAsync();
-            if (caregivers != null && caregivers.Any())
-            {
-                Caregiver = caregivers.FirstOrDefault();
-                var caregroups = await _caregroupContext.FindAllAsync();
-                if (caregroups != null && caregroups.Any())
-                {
-                    Caregroup = caregroups.FirstOrDefault();
-                    var babies = await _babyContext.FindAllAsync();
-                    if (babies != null && babies.Any())
-                    {
-                        Baby = babies.FirstOrDefault();
-                        Title = $"{Baby!.Name!} | {(DateTime.Now - Baby!.BirthDate!).Days / 7} weeks, {(DateTime.Now - Baby!.BirthDate!).Days % 7} days old";
-                    }
-                }
-            }
+            await _defaultService.UpdatePropertiesAsync();
+            Caregiver = _defaultService.Caregiver;
+            Caregroup = _defaultService.Caregroup;
+            Baby = _defaultService.Baby;
             IsBusy = false;
         }
 

@@ -11,12 +11,12 @@ namespace milkdrunk.viewmodels
         public HomeViewModel()
         {
             MyBabiesCommand = new Command(MyBabies);
-            CreateCaregroupCommand = new Command(CreateCaregroup);
+            CreateCaregroupCommand = new Command(CreateCaregroupAsync);
         }
 
         public Command? CreateCaregroupCommand { get; }
 
-        async void CreateCaregroup()
+        async void CreateCaregroupAsync()
         {
             IsBusy = true;
             var caregroup = new Caregroup()
@@ -24,7 +24,7 @@ namespace milkdrunk.viewmodels
                 Id = Guid.NewGuid().ToString(),
                 Owner = Caregiver
             };
-            await _caregroupContext.UpsertAsync(caregroup);
+            //await _defaultService._caregroupContext.UpsertAsync(caregroup);
             var updated = new HomePage();
             await Shell.Current.Navigation.PopAsync();
             await Shell.Current.Navigation.PushAsync(updated);

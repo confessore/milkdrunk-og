@@ -12,7 +12,6 @@ namespace milkdrunk.viewmodels
         public MyBabiesViewModel()
         {
             NewBabyCommand = new Command(NewBaby);
-            OnBabySelectionChangedCommand = new Command(OnBabySelectionChanged);
         }
 
         ObservableCollection<Baby>? babies;
@@ -46,9 +45,7 @@ namespace milkdrunk.viewmodels
             IsBusy = false;
         }
 
-        public Command? OnBabySelectionChangedCommand { get; }
-
-        async void OnBabySelectionChanged()
+        public async void OnBabySelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             IsBusy = true;
             await Shell.Current.Navigation.PushAsync(new NewBabyPage());
@@ -58,8 +55,7 @@ namespace milkdrunk.viewmodels
         public override async Task OnAppearingAsync()
         {
             await base.OnAppearingAsync();
-            var babies = await _babyContext.FindAllAsync();
-            Babies = babies.ToObservableCollection();
+            //Babies = await _defaultService._babyContext.RetrieveAsync();
         }
     }
 }

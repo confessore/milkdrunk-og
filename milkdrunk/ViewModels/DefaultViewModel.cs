@@ -12,8 +12,8 @@ namespace milkdrunk.viewmodels
         new public virtual async Task OnAppearingAsync()
         {
             IsBusy = true;
-            var caregivers = await _caregiverContext.FindAllAsync();
-            if (caregivers != null && caregivers.Any())
+            var caregiver = await _jsonStorageService.ReadFromFileAsync<Caregiver>("caregiver");
+            if (caregiver != null)
             {
                 await Task.Delay(1000);
                 App.Current.MainPage = new AppShell();

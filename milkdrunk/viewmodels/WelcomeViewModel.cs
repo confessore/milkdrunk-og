@@ -8,7 +8,7 @@ namespace milkdrunk.viewmodels
     {
         public WelcomeViewModel()
         {
-            ConfirmCommand = new Command(Confirm);
+            ConfirmCommand = new Command(ConfirmAsync);
         }
 
         string? name;
@@ -24,7 +24,7 @@ namespace milkdrunk.viewmodels
 
         public Command? ConfirmCommand { get; }
 
-        void Confirm()
+        async void ConfirmAsync()
         {
             IsBusy = true;
             var caregiver = new Caregiver()
@@ -32,7 +32,7 @@ namespace milkdrunk.viewmodels
                 Id = Guid.NewGuid().ToString(),
                 Name = Name
             };
-            _caregiverContext.UpsertAsync(caregiver);
+            await _jsonStorageService.WriteToFileAsync(caregiver, "caregiver");
             App.Current.MainPage = new AppShell();
             IsBusy = false;
         }

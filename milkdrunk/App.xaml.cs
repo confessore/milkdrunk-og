@@ -34,10 +34,10 @@ namespace milkdrunk
 
         Task RegisterServicesAsync()
         {
-            DependencyService.Register<ILiteDBAccessService>();
+            DependencyService.Register<ILocalStorageAccessService>();
             DependencyService.Register<ILiteDBService<Caregiver, string>, LiteDBService<Caregiver, string>>();
-            DependencyService.Register<ILiteDBService<Caregroup, string>, LiteDBService<Caregroup, string>>();
-            DependencyService.Register<ILiteDBService<Baby, string>, LiteDBService<Baby, string>>();
+            DependencyService.Register<IDefaultService, DefaultService>();
+            DependencyService.Register<ILocalStorageService, LocalStorageService>();
             return Task.CompletedTask;
         }
     }

@@ -26,25 +26,37 @@ namespace milkdrunk.views
             {
                 Children =
                 {
-                    new CollectionView()
-                    {
-                        ItemTemplate = new DataTemplate(() =>
-                            new StackLayout()
-                            {
-                                Children =
-                                {
-                                    new Label()
-                                    .Bind(Label.TextProperty, nameof(Baby.Name)),
-                                    new Label()
-                                    .Bind(Label.TextProperty, nameof(Baby.BirthDate))
-                                }
-                            })
-                    }
+                    DefaultCollectionView()
                     .Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedBaby))
-                    .Bind(CollectionView.SelectionChangedCommandProperty, nameof(_vm.OnBabySelectionChangedCommand))
                     .Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Babies))
                 }
             };
+        }
+
+        CollectionView DefaultCollectionView()
+        {
+            var collectionView = new CollectionView()
+            {
+                SelectionMode = SelectionMode.Single,
+                ItemTemplate = DefaultDataTemplate()
+            };
+            collectionView.SelectionChanged += _vm.OnBabySelectionChanged;
+            return collectionView;
+        }
+
+        DataTemplate DefaultDataTemplate()
+        {
+            return new DataTemplate(() =>
+                new StackLayout()
+                {
+                    Children =
+                    {
+                        new Label()
+                        .Bind(Label.TextProperty, nameof(Baby.Name)),
+                        new Label()
+                        .Bind(Label.TextProperty, nameof(Baby.BirthDate))
+                    }
+                });
         }
     }
 }

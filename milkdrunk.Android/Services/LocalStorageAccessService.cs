@@ -4,12 +4,12 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-[assembly: Xamarin.Forms.Dependency(typeof(LiteDatabaseAccessService))]
+[assembly: Xamarin.Forms.Dependency(typeof(LocalStorageAccessService))]
 namespace milkdrunk.Droid.Services
 {
-    public sealed class LiteDatabaseAccessService : ILiteDBAccessService
+    public sealed class LocalStorageAccessService : ILocalStorageAccessService
     {
-        public Task<string> ConnectionAsync(string filename)
+        public Task<string> FilePathAsync(string filename)
         {
             var lad = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             var dir = Path.Combine(lad, "milkdrunk");
@@ -19,7 +19,7 @@ namespace milkdrunk.Droid.Services
             return Task.FromResult(path);
         }
 
-        public string Connection(string filename) =>
-            ConnectionAsync(filename).Result;
+        public string FilePath(string filename) =>
+            FilePathAsync(filename).Result;
     }
 }
