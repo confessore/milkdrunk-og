@@ -10,6 +10,7 @@ namespace milkdrunk.viewmodels
     {
         public HomeViewModel()
         {
+            MyBabiesCommand = new Command(MyBabies);
             CreateCaregroupCommand = new Command(CreateCaregroup);
         }
 
@@ -27,6 +28,15 @@ namespace milkdrunk.viewmodels
             var updated = new HomePage();
             await Shell.Current.Navigation.PopAsync();
             await Shell.Current.Navigation.PushAsync(updated);
+            IsBusy = false;
+        }
+
+        public Command? MyBabiesCommand { get; }
+
+        async void MyBabies()
+        {
+            IsBusy = true;
+            await Shell.Current.Navigation.PushAsync(new MyBabiesPage());
             IsBusy = false;
         }
     }

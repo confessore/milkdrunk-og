@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Xamarin.CommunityToolkit.Markup;
+﻿using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
 namespace milkdrunk.views
@@ -24,7 +22,11 @@ namespace milkdrunk.views
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
                         .CenterHorizontal(),
-                    new Button() { Text = "caregroup" }
+                    new Button() { Text = "my babies" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .Bind(Button.CommandProperty, nameof(_vm.MyBabiesCommand)),
+                    new Button() { Text = "my caregroup", IsEnabled = false}
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
                     new Button() { Text = "caregiver settings" }
@@ -43,11 +45,15 @@ namespace milkdrunk.views
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
                         .CenterHorizontal(),
-                    new Button() { Text = "create a caregroup" }
+                    new Button() { Text = "my babies" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .Bind(Button.CommandProperty, nameof(_vm.MyBabiesCommand)),
+                    new Button() { Text = "create a caregroup", IsEnabled = false }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
                         .Bind(Button.CommandProperty, nameof(_vm.CreateCaregroupCommand)),
-                    new Button() { Text = "join a caregroup" }
+                    new Button() { Text = "join a caregroup", IsEnabled = false }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
                     new Button() { Text = "caregiver settings" }
