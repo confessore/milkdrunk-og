@@ -1,10 +1,8 @@
 ﻿using milkdrunk.models;
 using milkdrunk.services.interfaces;
-using milkdrunk.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -72,7 +70,8 @@ namespace milkdrunk.viewmodels
             await _defaultService.UpdatePropertiesAsync();
             Caregiver = _defaultService.Caregiver;
             //Caregroup = _defaultService.Caregroup;
-            //Baby = _defaultService.Baby;
+            Baby = _defaultService.Baby;
+            Title = _defaultService.Title;
             IsBusy = false;
         }
 

@@ -20,11 +20,17 @@ namespace milkdrunk.services
 
         public Baby? Baby { get; set; }
 
-        public string? Title { get; set; }
+        public string? Title { get; set; } = string.Empty;
 
         public async Task UpdatePropertiesAsync()
         {
             Caregiver = await _localStorageService.ReadFromFileAsync<Caregiver>("caregiver");
+            if (Caregiver != null)
+            {
+                Baby = await _localStorageService.ReadFromFileAsync<Baby>("baby");
+                if (Baby != null)
+                    Title = $"{Baby.Name!} | {(DateTime.Now - Baby.BirthDate!).Days / 7} weeks, {(DateTime.Now - Baby.BirthDate!).Days % 7} days old";
+            }
         }
     }
 }

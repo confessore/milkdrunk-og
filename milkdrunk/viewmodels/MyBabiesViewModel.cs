@@ -50,14 +50,19 @@ namespace milkdrunk.viewmodels
         {
             IsBusy = true;
             await Shell.Current.Navigation.PushAsync(new NewBabyPage());
-            System.Diagnostics.Debug.WriteLine("oof");
             IsBusy = false;
         }
 
         public override async Task OnAppearingAsync()
         {
             await base.OnAppearingAsync();
-            Babies = Caregiver.Babies.ToObservableCollection();
+            IsBusy = true;
+            if (Caregiver != null)
+            {
+                if (Caregiver.Babies != null)
+                    Babies = Caregiver.Babies.ToObservableCollection();
+            }
+            IsBusy = false;
         }
     }
 }

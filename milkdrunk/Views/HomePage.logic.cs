@@ -10,6 +10,7 @@ namespace milkdrunk.views
         public HomePage()
         {
             BindingContext = _vm = new HomeViewModel();
+            Build();
         }
 
         protected override async void OnAppearing()
@@ -17,7 +18,6 @@ namespace milkdrunk.views
             base.OnAppearing();
             await _vm.OnAppearingAsync();
             Title = _vm.Title;
-            Build();
         }
     }
 }

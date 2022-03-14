@@ -49,6 +49,8 @@ namespace milkdrunk.viewmodels
                 Caregiver.Babies = new Collection<Baby>();
             Caregiver.Babies.Add(baby);
             await _localStorageService.WriteToFileAsync(Caregiver, "caregiver");
+            if (!await _localStorageService.FileExistsAsync("baby"))
+                await _localStorageService.WriteToFileAsync(baby, "baby");
             await Shell.Current.Navigation.PopAsync();
             IsBusy = false;
         }

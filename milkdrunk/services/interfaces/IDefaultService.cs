@@ -7,7 +7,7 @@ namespace milkdrunk.services.interfaces
     {
         Caregiver? Caregiver { get; set; }
 
-         Caregroup? Caregroup { get; set; }
+        Caregroup? Caregroup { get; set; }
 
         Baby? Baby { get; set; }
 
