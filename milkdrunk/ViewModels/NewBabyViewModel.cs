@@ -1,5 +1,6 @@
 ﻿using milkdrunk.models;
 using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
@@ -44,6 +45,10 @@ namespace milkdrunk.viewmodels
                 BirthDate = BirthDate
             };
             //await _defaultService._babyContext.UpsertAsync(baby);
+            if (Caregiver.Babies == null)
+                Caregiver.Babies = new Collection<Baby>();
+            Caregiver.Babies.Add(baby);
+            await _localStorageService.WriteToFileAsync(Caregiver, "caregiver");
             await Shell.Current.Navigation.PopAsync();
             IsBusy = false;
         }

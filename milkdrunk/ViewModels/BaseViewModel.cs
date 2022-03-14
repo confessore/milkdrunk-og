@@ -16,7 +16,7 @@ namespace milkdrunk.viewmodels
         public IDefaultService _defaultService =>
             DependencyService.Get<IDefaultService>();
 
-        public ILocalStorageService _jsonStorageService =>
+        public ILocalStorageService _localStorageService =>
             DependencyService.Get<ILocalStorageService>();
 
         bool isBusy = false;
@@ -71,8 +71,8 @@ namespace milkdrunk.viewmodels
             IsBusy = true;
             await _defaultService.UpdatePropertiesAsync();
             Caregiver = _defaultService.Caregiver;
-            Caregroup = _defaultService.Caregroup;
-            Baby = _defaultService.Baby;
+            //Caregroup = _defaultService.Caregroup;
+            //Baby = _defaultService.Baby;
             IsBusy = false;
         }
 

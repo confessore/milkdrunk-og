@@ -1,6 +1,7 @@
 ﻿using milkdrunk.extensions;
 using milkdrunk.models;
 using milkdrunk.views;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -49,13 +50,14 @@ namespace milkdrunk.viewmodels
         {
             IsBusy = true;
             await Shell.Current.Navigation.PushAsync(new NewBabyPage());
+            System.Diagnostics.Debug.WriteLine("oof");
             IsBusy = false;
         }
 
         public override async Task OnAppearingAsync()
         {
             await base.OnAppearingAsync();
-            //Babies = await _defaultService._babyContext.RetrieveAsync();
+            Babies = Caregiver.Babies.ToObservableCollection();
         }
     }
 }

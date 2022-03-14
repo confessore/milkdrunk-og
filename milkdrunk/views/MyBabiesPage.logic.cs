@@ -11,13 +11,13 @@ namespace milkdrunk.views
         {
             BindingContext = _vm = new MyBabiesViewModel();
             ToolbarItems.Add(NewBabyToolbarItem());
+            Build();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             await _vm.OnAppearingAsync();
-            Build();
         }
     }
 }

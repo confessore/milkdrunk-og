@@ -32,7 +32,7 @@ namespace milkdrunk.viewmodels
                 Id = Guid.NewGuid().ToString(),
                 Name = Name
             };
-            await _jsonStorageService.WriteToFileAsync(caregiver, "caregiver");
+            await _localStorageService.WriteToFileAsync(caregiver, "caregiver");
             App.Current.MainPage = new AppShell();
             IsBusy = false;
         }

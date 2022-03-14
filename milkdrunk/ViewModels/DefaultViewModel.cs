@@ -12,7 +12,7 @@ namespace milkdrunk.viewmodels
         new public virtual async Task OnAppearingAsync()
         {
             IsBusy = true;
-            var caregiver = await _jsonStorageService.ReadFromFileAsync<Caregiver>("caregiver");
+            var caregiver = await _localStorageService.ReadFromFileAsync<Caregiver>("caregiver");
             if (caregiver != null)
             {
                 await Task.Delay(1000);
