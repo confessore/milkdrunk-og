@@ -2,6 +2,7 @@
 using milkdrunk.views;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
@@ -12,6 +13,29 @@ namespace milkdrunk.viewmodels
         {
             MyBabiesCommand = new Command(MyBabies);
             CreateCaregroupCommand = new Command(CreateCaregroupAsync);
+        }
+
+        string? greeting = string.Empty;
+        public string? Greeting
+        {
+            get => greeting;
+            set
+            {
+                greeting = value;
+                OnPropertyChanged();
+            }
+        }
+
+        string? name = string.Empty;
+        public string? Name
+        {
+            get => name;
+            set
+            {
+                name = value;
+                Greeting = $"welcome, {name}!";
+                OnPropertyChanged();
+            }
         }
 
         public Command? CreateCaregroupCommand { get; }
@@ -37,6 +61,15 @@ namespace milkdrunk.viewmodels
         {
             IsBusy = true;
             await Shell.Current.Navigation.PushAsync(new MyBabiesPage());
+            IsBusy = false;
+        }
+
+        public override async Task OnAppearingAsync()
+        {
+            await base.OnAppearingAsync();
+            IsBusy = true;
+            if (Caregiver != null)
+                Name = Caregiver.Name;
             IsBusy = false;
         }
     }

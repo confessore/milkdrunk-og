@@ -35,15 +35,7 @@ namespace milkdrunk.services
             catch { return default; }
         }
 
-        public async Task<Caregiver> ReadCaregiverAsync()
-        {
-            var filepath = await _localStorageAccessService.FilePathAsync("caregiver");
-            if (await FileExistsAsync(filepath))
-                return JsonSerializer.Deserialize<Caregiver>(await File.ReadAllTextAsync(filepath));
-            return new Caregiver();
-        }
-
-        public async Task<bool> FileExistsAsync(string filepath) =>
-            await Task.FromResult(File.Exists(filepath));
+        public async Task<bool> FileExistsAsync(string filename) =>
+            await Task.FromResult(File.Exists(await _localStorageAccessService.FilePathAsync(filename)));
     }
 }

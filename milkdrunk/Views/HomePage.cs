@@ -18,10 +18,11 @@ namespace milkdrunk.views
             return new StackLayout()
             {
                 Children = {
-                    new Label() { Text = $"welcome, {_vm.Caregiver!.Name}" }
+                    new Label()
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
-                        .CenterHorizontal(),
+                        .CenterHorizontal()
+                        .Bind(Label.TextProperty, nameof(_vm.Greeting)),
                     new Button() { Text = "my babies" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
@@ -41,10 +42,11 @@ namespace milkdrunk.views
             return new StackLayout()
             {
                 Children = {
-                    new Label() { Text = $"welcome, {_vm.Caregiver!.Name}" }
+                    new Label()
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
-                        .CenterHorizontal(),
+                        .CenterHorizontal()
+                        .Bind(Label.TextProperty, nameof(_vm.Greeting)),
                     new Button() { Text = "my babies" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
