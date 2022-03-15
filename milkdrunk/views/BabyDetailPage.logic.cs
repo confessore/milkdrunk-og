@@ -1,4 +1,5 @@
-﻿using milkdrunk.viewmodels;
+﻿using milkdrunk.models;
+using milkdrunk.viewmodels;
 using Xamarin.Forms;
 
 namespace milkdrunk.views
@@ -7,9 +8,10 @@ namespace milkdrunk.views
     {
         BabyDetailViewModel _vm;
 
-        public BabyDetailPage()
+        public BabyDetailPage(
+            Baby baby)
         {
-            BindingContext = _vm = new BabyDetailViewModel();
+            BindingContext = _vm = new BabyDetailViewModel(baby);
             Build();
         }
 

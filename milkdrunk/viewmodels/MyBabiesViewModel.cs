@@ -49,7 +49,7 @@ namespace milkdrunk.viewmodels
         public async void OnBabySelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             IsBusy = true;
-            await Shell.Current.Navigation.PushAsync(new BabyDetailPage());
+            await Shell.Current.Navigation.PushAsync(new BabyDetailPage(SelectedBaby ?? new Baby()));
             IsBusy = false;
         }
 
