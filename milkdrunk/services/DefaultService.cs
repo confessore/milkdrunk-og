@@ -29,7 +29,7 @@ namespace milkdrunk.services
             {
                 Baby = await _localStorageService.ReadFromFileAsync<Baby>("baby");
                 if (Baby != null)
-                    Title = $"{Baby.Name!} | {(DateTime.Now - Baby.BirthDate!).Days / 7} weeks, {(DateTime.Now - Baby.BirthDate!).Days % 7} days old";
+                    Title = $"{Baby.Name!} | {(DateTime.Now - Baby.BirthDate!).Days / 7}w, {(DateTime.Now - Baby.BirthDate!).Days % 7}d";
             }
         }
     }

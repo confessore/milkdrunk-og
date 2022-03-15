@@ -18,6 +18,10 @@ namespace milkdrunk.views
             return new StackLayout()
             {
                 Children = {
+                    new Label() { Text = "home" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .CenterHorizontal(),
                     new Label()
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)

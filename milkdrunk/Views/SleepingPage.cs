@@ -15,10 +15,17 @@ namespace milkdrunk.views
             return new StackLayout()
             {
                 Children = {
-                    new Button() { Text = "add new sleep" }
+                    new Label() { Text = "sleeping" }
                         .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                        //.Bind(Button.CommandProperty, nameof(_vm.MyBabiesCommand)),
+                        .Paddings(5, 5, 5, 5)
+                        .CenterHorizontal(),
+                    new Button() { Text = "new sleeping" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
+                        .Bind(Button.CommandProperty, nameof(_vm.NewSleepingCommand)),
+                    new Button() { Text = "my sleepings" }
+                        .Margins(5, 5, 5, 5)
+                        .Paddings(5, 5, 5, 5)
                 }
             };
         }

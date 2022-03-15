@@ -1,7 +1,9 @@
 ﻿using milkdrunk.models;
+using milkdrunk.Views;
 using System;
 using System.Collections.Generic;
 using System.Timers;
+using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
 {
@@ -9,61 +11,16 @@ namespace milkdrunk.viewmodels
     {
         public SleepingViewModel()
         {
+            NewSleepingCommand = new Command(NewSleeping);
         }
 
-        DateTime start;
-        public DateTime Start
-        {
-            get => start;
-            set
-            {
-                start = value;
-                OnPropertyChanged();
-            }
-        }
+        public Command? NewSleepingCommand { get; }
 
-        DateTime end;
-        public DateTime End
+        async void NewSleeping()
         {
-            get => end;
-            set
-            {
-                end = value;
-                OnPropertyChanged();
-            }
-        }
-
-        Timer timer;
-        public Timer Timer
-        {
-            get => timer;
-            set
-            {
-                timer = value;
-                OnPropertyChanged();
-            }
-        }
-
-        Sleeping sleeping;
-        public Sleeping Sleeping
-        {
-            get => sleeping;
-            set
-            {
-                sleeping = value;
-                OnPropertyChanged();
-            }
-        }
-
-        ICollection<Sleeping> sleepings;
-        public ICollection<Sleeping> Sleepings
-        {
-            get => sleepings;
-            set
-            {
-                sleepings = value;
-                OnPropertyChanged();
-            }
+            IsBusy = true;
+            await Shell.Current.Navigation.PushAsync(new NewSleepingPage());
+            IsBusy = false;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        DateTime birthDate;
+        DateTime birthDate = DateTime.Now;
         public DateTime BirthDate
         {
             get => birthDate;
