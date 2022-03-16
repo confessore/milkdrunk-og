@@ -38,10 +38,10 @@ namespace milkdrunk.views
                         .Paddings(5, 5, 5, 5),
                     new DatePicker()
                         .Margins(5, 5, 5, 5)
-                        .Bind(DatePicker.IsEnabledProperty, nameof(_vm.IsChecked)),
+                        .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
                     new TimePicker()
                         .Margins(5, 5, 5, 5)
-                        .Bind(DatePicker.IsEnabledProperty, nameof(_vm.IsChecked)),
+                        .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
                     new Button() { Text = AppResources.button_confirm }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
