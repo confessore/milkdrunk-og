@@ -43,10 +43,10 @@ namespace milkdrunk.views
                                 {
                                     new DatePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(DatePicker.DateProperty, nameof(_vm.Start)),
+                                        .Bind(DatePicker.DateProperty, nameof(_vm.StartDate)),
                                     new TimePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(TimePicker.TimeProperty, nameof(_vm.Start))
+                                        .Bind(TimePicker.TimeProperty, nameof(_vm.StartTime))
                                 }
                             },
                             new Label() { Text = "log end now?"}
@@ -66,11 +66,11 @@ namespace milkdrunk.views
                                 {
                                     new DatePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(DatePicker.DateProperty, nameof(_vm.End))
+                                        .Bind(DatePicker.DateProperty, nameof(_vm.EndDate))
                                         .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
                                     new TimePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(TimePicker.TimeProperty, nameof(_vm.End))
+                                        .Bind(TimePicker.TimeProperty, nameof(_vm.EndTime))
                                         .Bind(TimePicker.IsVisibleProperty, nameof(_vm.IsChecked))
                                 }
                             },

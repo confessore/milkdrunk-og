@@ -10,13 +10,24 @@ namespace milkdrunk.viewmodels
         {
         }
 
-        DateTime start = DateTime.Now;
-        public DateTime Start
+        DateTime startDate = DateTime.Now;
+        public DateTime StartDate
         {
-            get => start;
+            get => startDate;
             set
             {
-                start = value;
+                startDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        TimeSpan startTime = DateTime.Now.TimeOfDay;
+        public TimeSpan StartTime
+        {
+            get => startTime;
+            set
+            {
+                startTime = value;
                 OnPropertyChanged();
             }
         }
@@ -32,13 +43,25 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        DateTime end = DateTime.Now;
-        public DateTime End
+        DateTime endDate = DateTime.Now;
+        public DateTime EndDate
         {
-            get => end;
+            get => endDate;
             set
             {
-                end = value;
+                endDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        TimeSpan endTime = DateTime.Now.TimeOfDay;
+        public TimeSpan EndTime
+
+        {
+            get => endTime;
+            set
+            {
+                endTime = value;
                 OnPropertyChanged();
             }
         }
