@@ -21,6 +21,17 @@ namespace milkdrunk.viewmodels
             }
         }
 
+        bool isChecked;
+        public bool IsChecked
+        {
+            get => isChecked;
+            set
+            {
+                isChecked = value;
+                OnPropertyChanged();
+            }
+        }
+
         DateTime end;
         public DateTime End
         {

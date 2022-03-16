@@ -20,27 +20,28 @@ namespace milkdrunk.views
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5)
                         .CenterHorizontal(),
-                    new Button() { Text = "start stopwatch" }
+                    new Label() { Text = "start" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
-                    new Button() { Text = "end stopwatch" }
-                        .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                    new Label() { Text = "hours" }
-                        .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
-                    new Entry()
+                    new DatePicker()
                         .Margins(5, 5, 5, 5),
-                    new Label() { Text = "minutes" }
+                    new TimePicker()
+                        .Margins(5, 5, 5, 5),
+                    new Label() { Text = "log end now?"}
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
-                    new Entry()
-                        .Margins(5, 5, 5, 5),
-                    new Label() { Text = "seconds" }
+                    new CheckBox()
+                        .Margins(5, 5, 5, 5)
+                        .Bind(CheckBox.IsCheckedProperty, nameof(_vm.IsChecked)),
+                    new Label() { Text = "end" }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
-                    new Entry()
-                        .Margins(5, 5, 5, 5),
+                    new DatePicker()
+                        .Margins(5, 5, 5, 5)
+                        .Bind(DatePicker.IsEnabledProperty, nameof(_vm.IsChecked)),
+                    new TimePicker()
+                        .Margins(5, 5, 5, 5)
+                        .Bind(DatePicker.IsEnabledProperty, nameof(_vm.IsChecked)),
                     new Button() { Text = AppResources.button_confirm }
                         .Margins(5, 5, 5, 5)
                         .Paddings(5, 5, 5, 5),
