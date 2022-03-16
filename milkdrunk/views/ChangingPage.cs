@@ -7,16 +7,42 @@ namespace milkdrunk.views
     {
         void Build()
         {
-            Content = new StackLayout
+            Content = DefaultStackLayout();
+        }
+
+        StackLayout DefaultStackLayout()
+        {
+            return new StackLayout()
             {
                 Children = {
-                    new Button() { Text = "new" }
-                        .Margins(0, 0, 5, 0)
-                        .Paddings(0, 0, 5, 0)
-                        .End(),
-                    new CollectionView() { },
-                    new Editor() { Placeholder = "comments" }
-                        .FillExpand()
+                    new StackLayout()
+                    {
+                        VerticalOptions = LayoutOptions.Start,
+                        Children =
+                        {
+                            new Label() { Text = "changing" }
+                                .Margins(5, 5, 5, 5)
+                                .Paddings(5, 5, 5, 5)
+                                .CenterHorizontal()
+                        }
+                    },
+                    new StackLayout()
+                    {
+                        VerticalOptions = LayoutOptions.StartAndExpand,
+                        Children =
+                        {
+
+                        }
+                    },
+                    new StackLayout()
+                    {
+                        VerticalOptions = LayoutOptions.End,
+                        Children =
+                        {
+                            new AdView()
+                                .Height(60)
+                        }
+                    }
                 }
             };
         }

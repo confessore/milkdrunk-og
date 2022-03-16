@@ -13,13 +13,14 @@ namespace milkdrunk.views
         {
             On<iOS>().SetUseSafeArea(true);
             BindingContext = _vm = new NewBabyViewModel();
+            Build();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             await _vm.OnAppearingAsync();
-            Build();
+            Title = _vm.Title;
         }
     }
 }

@@ -24,11 +24,37 @@ namespace milkdrunk.views
         {
             return new StackLayout()
             {
-                Children =
-                {
-                    DefaultCollectionView()
-                    .Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedBaby))
-                    .Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Babies))
+                Children = {
+                    new StackLayout()
+                    {
+                        VerticalOptions = LayoutOptions.Start,
+                        Children =
+                        {
+                            new Label() { Text = "my babies" }
+                                .Margins(5, 5, 5, 5)
+                                .Paddings(5, 5, 5, 5)
+                                .CenterHorizontal()
+                        }
+                    },
+                    new StackLayout()
+                    {
+                        VerticalOptions = LayoutOptions.StartAndExpand,
+                        Children =
+                        {
+                            DefaultCollectionView()
+                                .Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedBaby))
+                                .Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Babies))
+                        }
+                    },
+                    new StackLayout()
+                    {
+                        VerticalOptions = LayoutOptions.End,
+                        Children =
+                        {
+                            new AdView()
+                                .Height(60)
+                        }
+                    }
                 }
             };
         }

@@ -10,13 +10,13 @@ namespace milkdrunk.views
         public DefaultPage()
         {
             BindingContext = _vm = new DefaultViewModel();
+            Build();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             await _vm.OnAppearingAsync();
-            await BuildAsync();
         }
     }
 }

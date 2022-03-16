@@ -15,8 +15,9 @@ namespace milkdrunk.views
 
         protected override async void OnAppearing()
         {
-            await _vm.OnAppearingAsync();
             base.OnAppearing();
+            await _vm.OnAppearingAsync();
+            Title = _vm.Title;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace milkdrunk.views
 {
     public partial class DefaultPage
     {
-        Task BuildAsync()
+        void Build()
         {
             Content = new StackLayout
             {
@@ -13,7 +13,6 @@ namespace milkdrunk.views
                     new Label() { Text = "loading..." }
                 }
             };
-            return Task.CompletedTask;
         }
     }
 }
