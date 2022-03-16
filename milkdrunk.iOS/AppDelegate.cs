@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Google.MobileAds;
 using UIKit;
 
 namespace milkdrunk.iOS
@@ -18,6 +19,7 @@ namespace milkdrunk.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            MobileAds.SharedInstance.Start(null);
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
