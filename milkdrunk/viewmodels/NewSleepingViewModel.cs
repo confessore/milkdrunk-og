@@ -10,7 +10,7 @@ namespace milkdrunk.viewmodels
         {
         }
 
-        DateTime start;
+        DateTime start = DateTime.Now;
         public DateTime Start
         {
             get => start;
@@ -32,7 +32,7 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        DateTime end;
+        DateTime end = DateTime.Now;
         public DateTime End
         {
             get => end;

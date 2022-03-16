@@ -1,6 +1,7 @@
 ﻿using milkdrunk.resources;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
+using static Xamarin.CommunityToolkit.Markup.GridRowsColumns;
 
 namespace milkdrunk.views
 {
@@ -35,10 +36,19 @@ namespace milkdrunk.views
                             new Label() { Text = "start" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5),
-                            new DatePicker()
-                                .Margins(5, 5, 5, 5),
-                            new TimePicker()
-                                .Margins(5, 5, 5, 5),
+                            new StackLayout()
+                            {
+                                Orientation = StackOrientation.Horizontal,
+                                Children =
+                                {
+                                    new DatePicker()
+                                        .Margins(5, 5, 5, 5)
+                                        .Bind(DatePicker.DateProperty, nameof(_vm.Start)),
+                                    new TimePicker()
+                                        .Margins(5, 5, 5, 5)
+                                        .Bind(TimePicker.TimeProperty, nameof(_vm.Start))
+                                }
+                            },
                             new Label() { Text = "log end now?"}
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5),
@@ -49,12 +59,21 @@ namespace milkdrunk.views
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .Bind(Label.IsVisibleProperty, nameof(_vm.IsChecked)),
-                            new DatePicker()
-                                .Margins(5, 5, 5, 5)
-                                .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
-                            new TimePicker()
-                                .Margins(5, 5, 5, 5)
-                                .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
+                            new StackLayout()
+                            {
+                                Orientation = StackOrientation.Horizontal,
+                                Children =
+                                {
+                                    new DatePicker()
+                                        .Margins(5, 5, 5, 5)
+                                        .Bind(DatePicker.DateProperty, nameof(_vm.End))
+                                        .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
+                                    new TimePicker()
+                                        .Margins(5, 5, 5, 5)
+                                        .Bind(TimePicker.TimeProperty, nameof(_vm.End))
+                                        .Bind(TimePicker.IsVisibleProperty, nameof(_vm.IsChecked))
+                                }
+                            },
                             new Button() { Text = AppResources.button_confirm }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5),
