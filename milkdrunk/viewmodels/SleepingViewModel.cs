@@ -1,8 +1,4 @@
-﻿using milkdrunk.models;
-using milkdrunk.Views;
-using System;
-using System.Collections.Generic;
-using System.Timers;
+﻿using milkdrunk.views;
 using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels

@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
 namespace milkdrunk.views

@@ -1,7 +1,6 @@
 ﻿using milkdrunk.extensions;
 using milkdrunk.models;
 using milkdrunk.views;
-using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;

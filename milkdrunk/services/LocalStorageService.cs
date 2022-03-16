@@ -1,5 +1,4 @@
-﻿using milkdrunk.models;
-using milkdrunk.services.interfaces;
+﻿using milkdrunk.services.interfaces;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -7,7 +6,7 @@ using Xamarin.Forms;
 
 namespace milkdrunk.services
 {
-    public  class LocalStorageService : ILocalStorageService
+    public class LocalStorageService : ILocalStorageService
     {
         ILocalStorageAccessService _localStorageAccessService =>
             DependencyService.Get<ILocalStorageAccessService>();

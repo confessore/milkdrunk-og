@@ -48,7 +48,7 @@ namespace milkdrunk.viewmodels
                 birthDate = value;
                 OnPropertyChanged();
             }
-                
+
         }
 
         public Command? EditBabyCommand { get; }

@@ -1,8 +1,7 @@
-﻿using System;
-using milkdrunk.viewmodels;
+﻿using milkdrunk.viewmodels;
 using Xamarin.Forms;
 
-namespace milkdrunk.Views
+namespace milkdrunk.views
 {
     public partial class NewSleepingPage : ContentPage
     {

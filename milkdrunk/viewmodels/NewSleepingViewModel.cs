@@ -1,8 +1,6 @@
-﻿using System;
-using System.Diagnostics;
+﻿using milkdrunk.models;
+using System;
 using System.Threading.Tasks;
-using System.Timers;
-using milkdrunk.models;
 
 namespace milkdrunk.viewmodels
 {
