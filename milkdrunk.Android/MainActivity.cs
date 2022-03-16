@@ -1,6 +1,6 @@
-﻿
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
+using Android.Gms.Ads;
 using Android.OS;
 using Android.Runtime;
 
@@ -13,6 +13,7 @@ namespace milkdrunk.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            MobileAds.Initialize(ApplicationContext);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

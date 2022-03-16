@@ -54,7 +54,11 @@ namespace milkdrunk.views
                                 .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
                             new TimePicker()
                                 .Margins(5, 5, 5, 5)
-                                .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked))
+                                .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
+                            new Button() { Text = AppResources.button_confirm }
+                                .Margins(5, 5, 5, 5)
+                                .Paddings(5, 5, 5, 5),
+                                //.Bind(Button.CommandProperty, nameof(_vm.MyBabiesCommand))
                         }
                     },
                     new StackLayout()
@@ -62,10 +66,8 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.End,
                         Children =
                         {
-                            new Button() { Text = AppResources.button_confirm }
-                                .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5),
-                                //.Bind(Button.CommandProperty, nameof(_vm.MyBabiesCommand))
+                            new AdView()
+                                .Height(60)
                         }
                     }
                 }
