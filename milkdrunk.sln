@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "milkdrunk.Android", "milkdr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "milkdrunk.iOS", "milkdrunk.iOS\milkdrunk.iOS.csproj", "{F8ACEEFB-B0B7-4B63-9514-D9F04BB8E99A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "milkdrunk", "milkdrunk\milkdrunk.csproj", "{C5FEEC53-B701-469A-80AD-F86F1D8F4CB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "milkdrunk", "milkdrunk\milkdrunk.csproj", "{C5FEEC53-B701-469A-80AD-F86F1D8F4CB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +28,7 @@ Global
 		{98F136F0-FDAA-47FE-8429-B971C91439F1}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{98F136F0-FDAA-47FE-8429-B971C91439F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98F136F0-FDAA-47FE-8429-B971C91439F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98F136F0-FDAA-47FE-8429-B971C91439F1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{98F136F0-FDAA-47FE-8429-B971C91439F1}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{98F136F0-FDAA-47FE-8429-B971C91439F1}.Release|iPhone.Build.0 = Release|Any CPU
 		{98F136F0-FDAA-47FE-8429-B971C91439F1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
