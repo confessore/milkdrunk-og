@@ -35,7 +35,8 @@ namespace milkdrunk.views
                         .Bind(CheckBox.IsCheckedProperty, nameof(_vm.IsChecked)),
                     new Label() { Text = "end" }
                         .Margins(5, 5, 5, 5)
-                        .Paddings(5, 5, 5, 5),
+                        .Paddings(5, 5, 5, 5)
+                        .Bind(Label.IsVisibleProperty, nameof(_vm.IsChecked)),
                     new DatePicker()
                         .Margins(5, 5, 5, 5)
                         .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
