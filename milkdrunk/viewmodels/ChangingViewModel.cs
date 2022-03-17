@@ -1,5 +1,8 @@
 ﻿using milkdrunk.models;
+using milkdrunk.views;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
 {
@@ -7,10 +10,11 @@ namespace milkdrunk.viewmodels
     {
         public ChangingViewModel()
         {
+            MyChangingsCommand = new Command(MyChangings);
         }
 
-        Changing changing;
-        public Changing Changing
+        Changing? changing;
+        public Changing? Changing
         {
             get => changing;
             set
@@ -20,8 +24,8 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        ICollection<Changing> changings;
-        public ICollection<Changing> Changings
+        ObservableCollection<Changing>? changings;
+        public ObservableCollection<Changing>? Changings
         {
             get => changings;
             set
@@ -29,6 +33,15 @@ namespace milkdrunk.viewmodels
                 changings = value;
                 OnPropertyChanged();
             }
+        }
+
+        public Command? MyChangingsCommand { get; }
+
+        async void MyChangings()
+        {
+            IsBusy = true;
+            await Shell.Current.Navigation.PushAsync(new MyChangingsPage());
+            IsBusy = false;
         }
     }
 }
