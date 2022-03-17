@@ -1,5 +1,7 @@
 ﻿using milkdrunk.models;
 using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -73,17 +75,6 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        Sleeping sleeping = new Sleeping();
-        public Sleeping Sleeping
-        {
-            get => sleeping;
-            set
-            {
-                sleeping = value;
-                OnPropertyChanged();
-            }
-        }
-
         public Command? AddNewSleepingCommand { get; }
 
         bool CanAddNewSleeping()
@@ -91,15 +82,27 @@ namespace milkdrunk.viewmodels
             if (IsChecked)
             {
                 if (StartDate.Date == EndDate.Date)
-                    return StartTime.Minutes < EndTime.Minutes;
+                    return Math.Floor(StartTime.TotalMinutes) < Math.Floor(EndTime.TotalMinutes);
                 return StartDate.Date < EndDate.Date;
             }
             return true;
         }
 
-        void AddNewSleeping()
+        async void AddNewSleeping()
         {
-
+            IsBusy = true;
+            var start = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hours, StartTime.Minutes, 0);
+            var end = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hours, StartTime.Minutes, 0);
+            var sleeping = new Sleeping() { Start = start, End = end };
+            var baby = Caregiver.Babies.FirstOrDefault(x => x.Id == Baby.Id);
+            if (baby.Sleepings == null)
+                baby.Sleepings = new Collection<Sleeping>();
+            baby.Sleepings.Add(sleeping);
+            Caregiver.Babies.Remove(baby);
+            Caregiver.Babies.Add(baby);
+            await _localStorageService.WriteToFileAsync<Caregiver>(Caregiver, "caregiver");
+            await Shell.Current.Navigation.PopAsync();
+            IsBusy = false;
         }
 
         public override async Task OnAppearingAsync()
