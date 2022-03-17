@@ -11,7 +11,7 @@ namespace milkdrunk.views
             Content = DefaultStackLayout();
         }
 
-        ToolbarItem NewBabyToolbarItem()
+        ToolbarItem NewSleepingToolbarItem()
         {
             return new ToolbarItem()
             {
@@ -43,7 +43,7 @@ namespace milkdrunk.views
                         {
                             DefaultCollectionView()
                                 //.Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedSleeping))
-                                //.Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Sleepings))
+                                .Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Sleepings))
                         }
                     },
                     new StackLayout()

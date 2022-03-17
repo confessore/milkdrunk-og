@@ -1,7 +1,6 @@
 ﻿using milkdrunk.resources;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
-using static Xamarin.CommunityToolkit.Markup.GridRowsColumns;
 
 namespace milkdrunk.views
 {

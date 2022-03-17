@@ -8,6 +8,7 @@ namespace milkdrunk.viewmodels
         public SleepingViewModel()
         {
             NewSleepingCommand = new Command(NewSleeping);
+            MySleepingsCommand = new Command(MySleepings);
         }
 
         public Command? NewSleepingCommand { get; }
@@ -16,6 +17,15 @@ namespace milkdrunk.viewmodels
         {
             IsBusy = true;
             await Shell.Current.Navigation.PushAsync(new NewSleepingPage());
+            IsBusy = false;
+        }
+
+        public Command? MySleepingsCommand { get; }
+
+        async void MySleepings()
+        {
+            IsBusy = true;
+            await Shell.Current.Navigation.PushAsync(new MySleepingsPage());
             IsBusy = false;
         }
     }

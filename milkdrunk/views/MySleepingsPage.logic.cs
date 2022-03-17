@@ -10,6 +10,7 @@ namespace milkdrunk.views
         public MySleepingsPage()
         {
             BindingContext = _vm = new MySleepingsViewModel();
+            ToolbarItems.Add(NewSleepingToolbarItem());
             Build();
         }
 
