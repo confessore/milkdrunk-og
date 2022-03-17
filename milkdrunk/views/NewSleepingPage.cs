@@ -76,8 +76,8 @@ namespace milkdrunk.views
                             },
                             new Button() { Text = AppResources.button_confirm }
                                 .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5),
-                                //.Bind(Button.CommandProperty, nameof(_vm.MyBabiesCommand))
+                                .Paddings(5, 5, 5, 5)
+                                .Bind(Button.CommandProperty, nameof(_vm.AddNewSleepingCommand))
                         }
                     },
                     new StackLayout()

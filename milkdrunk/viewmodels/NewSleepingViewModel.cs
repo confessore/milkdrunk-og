@@ -1,6 +1,7 @@
 ﻿using milkdrunk.models;
 using System;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
 {
@@ -8,6 +9,7 @@ namespace milkdrunk.viewmodels
     {
         public NewSleepingViewModel()
         {
+            AddNewSleepingCommand = new Command(AddNewSleeping, CanAddNewSleeping);
         }
 
         DateTime startDate = DateTime.Now;
@@ -17,6 +19,7 @@ namespace milkdrunk.viewmodels
             set
             {
                 startDate = value;
+                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -28,6 +31,7 @@ namespace milkdrunk.viewmodels
             set
             {
                 startTime = value;
+                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -39,6 +43,7 @@ namespace milkdrunk.viewmodels
             set
             {
                 isChecked = value;
+                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -50,6 +55,7 @@ namespace milkdrunk.viewmodels
             set
             {
                 endDate = value;
+                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -62,11 +68,12 @@ namespace milkdrunk.viewmodels
             set
             {
                 endTime = value;
+                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
 
-        Sleeping sleeping;
+        Sleeping sleeping = new Sleeping();
         public Sleeping Sleeping
         {
             get => sleeping;
@@ -75,6 +82,24 @@ namespace milkdrunk.viewmodels
                 sleeping = value;
                 OnPropertyChanged();
             }
+        }
+
+        public Command? AddNewSleepingCommand { get; }
+
+        bool CanAddNewSleeping()
+        {
+            if (IsChecked)
+            {
+                if (StartDate.Date == EndDate.Date)
+                    return StartTime.Minutes < EndTime.Minutes;
+                return StartDate.Date < EndDate.Date;
+            }
+            return true;
+        }
+
+        void AddNewSleeping()
+        {
+
         }
 
         public override async Task OnAppearingAsync()
