@@ -89,7 +89,7 @@ namespace milkdrunk.viewmodels
         }
 
         #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;

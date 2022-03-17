@@ -62,7 +62,6 @@ namespace milkdrunk.viewmodels
 
         async void SetDefaultBaby()
         {
-            System.Diagnostics.Debug.WriteLine("hello from set default baby");
             IsBusy = true;
             await _localStorageService.WriteToFileAsync(Caregiver.Babies.FirstOrDefault(x => x.Id == Id), "baby");
             await Shell.Current.Navigation.PopAsync();

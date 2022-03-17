@@ -1,5 +1,6 @@
 ﻿using milkdrunk.extensions;
 using milkdrunk.models;
+using milkdrunk.views;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,11 @@ namespace milkdrunk.viewmodels
 {
     public class MySleepingsViewModel : BaseViewModel
     {
+        public MySleepingsViewModel()
+        {
+            NewSleepingCommand = new Command(NewSleeping);
+        }
+
         ObservableCollection<Sleeping>? sleepings;
         public ObservableCollection<Sleeping>? Sleepings
         {
@@ -25,6 +31,15 @@ namespace milkdrunk.viewmodels
             IsBusy = true;
             //new SleepingDetailPage(SelectedSleeping ?? new Sleeping())
             //await Shell.Current.Navigation.PushAsync();
+            IsBusy = false;
+        }
+
+        public Command? NewSleepingCommand { get; }
+
+        async void NewSleeping()
+        {
+            IsBusy = true;
+            await Shell.Current.Navigation.PushAsync(new NewSleepingPage());
             IsBusy = false;
         }
 

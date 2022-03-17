@@ -31,10 +31,6 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.StartAndExpand,
                         Children =
                         {
-                            new Button() { Text = "new sleeping" }
-                                .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.NewSleepingCommand)),
                             new Button() { Text = "my sleepings" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)

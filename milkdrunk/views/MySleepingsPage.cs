@@ -16,8 +16,8 @@ namespace milkdrunk.views
             return new ToolbarItem()
             {
                 Text = "new sleeping"
-            };
-            //.Bind(ToolbarItem.CommandProperty, nameof(_vm.NewSleepingCommand));
+            }
+            .Bind(ToolbarItem.CommandProperty, nameof(_vm.NewSleepingCommand));
         }
 
         StackLayout DefaultStackLayout()
