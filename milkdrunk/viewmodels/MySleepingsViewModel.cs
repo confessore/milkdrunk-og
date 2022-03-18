@@ -26,7 +26,7 @@ namespace milkdrunk.viewmodels
             }
         }
 
-        public async void OnBabySelectionChanged(object sender, SelectionChangedEventArgs args)
+        public async void OnSleepingSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             IsBusy = true;
             //new SleepingDetailPage(SelectedSleeping ?? new Sleeping())
