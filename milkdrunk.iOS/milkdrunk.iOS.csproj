@@ -74,6 +74,9 @@
     <LangVersion>preview</LangVersion>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -216,6 +219,24 @@
     <BundleResource Include="Resources\milkdrunk80.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="renderers\" />
+    <AndroidResource Include="Resources\diaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\home.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\sleep.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pump.png" />
   </ItemGroup>
 </Project>
