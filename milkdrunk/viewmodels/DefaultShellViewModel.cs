@@ -1,5 +1,4 @@
-﻿using System;
-namespace milkdrunk.viewmodels
+﻿namespace milkdrunk.viewmodels
 {
     public class DefaultShellViewModel
     {

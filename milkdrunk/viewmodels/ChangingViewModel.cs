@@ -1,6 +1,5 @@
 ﻿using milkdrunk.models;
 using milkdrunk.views;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 

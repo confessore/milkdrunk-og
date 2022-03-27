@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace milkdrunk.views
 {
@@ -13,12 +12,11 @@ namespace milkdrunk.views
 
         ResourceDictionary DefaultResourceDictionary()
         {
-            var resourceDictionary = new ResourceDictionary()
+            return new()
             {
                 DefaultStyle(),
                 TabBarStyle()
             };
-            return resourceDictionary;
         }
 
         Style DefaultStyle()
@@ -27,7 +25,7 @@ namespace milkdrunk.views
             style.Setters.Add(new Setter()
             {
                 Property = Shell.BackgroundColorProperty,
-                Value = App.Current.Resources.TryGetValue("Primary", out var primary) ? primary : Color.Pink
+                Value = App.Current.Resources.TryGetValue("Primary", out var primary) ? primary : default
             });
             return style;
         }
@@ -36,7 +34,7 @@ namespace milkdrunk.views
         {
             var style = new Style(typeof(TabBar))
             {
-                BasedOn = Resources.TryGetValue("BaseStyle", out var baseStyle) ? (Style)baseStyle : new(typeof(TabBar))
+                BasedOn = Resources.TryGetValue("BaseStyle", out var baseStyle) ? (Style)baseStyle : default
             };
             return style;
         }
@@ -51,7 +49,7 @@ namespace milkdrunk.views
 
         ShellContent HomeTab()
         {
-            return new ShellContent()
+            return new()
             {
                 Title = "home",
                 Icon = "home.png",
@@ -62,7 +60,7 @@ namespace milkdrunk.views
 
         ShellContent SleepingTab()
         {
-            return new ShellContent()
+            return new()
             {
                 Title = "sleeping",
                 Icon = "sleep.png",

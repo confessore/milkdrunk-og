@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace milkdrunk
 {
@@ -18,11 +15,10 @@ namespace milkdrunk
 
         ResourceDictionary DefaultResourceDictionary()
         {
-            var resourceDictionary = new ResourceDictionary()
+            return new()
             {
                 ButtonStyle()
             };
-            return resourceDictionary;
         }
 
         Style ButtonStyle()

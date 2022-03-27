@@ -1,5 +1,4 @@
-﻿using System;
-using Foundation;
+﻿using Foundation;
 using Google.MobileAds;
 using milkdrunk.iOS.Renderers;
 using milkdrunk.views;

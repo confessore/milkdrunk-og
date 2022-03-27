@@ -31,11 +31,11 @@ namespace milkdrunk.Droid.renderers
                     LayoutParams.WrapContent, LayoutParams.WrapContent)
             };
 
-//#if DEBUG
+            //#if DEBUG
             //adView.LoadAd(new AdRequest.Builder().AddTestDevice("04DB1A4AC8F198E3ABC7232881E7DE56").Build());
-//#else
+            //#else
             adView.LoadAd(new AdRequest.Builder().Build());
-//#endif
+            //#endif
             return adView;
         }
 
