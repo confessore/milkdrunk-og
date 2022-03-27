@@ -6,26 +6,23 @@ namespace milkdrunk.views
     {
         void Build()
         {
-            Resources.Add("BaseStyle", DefaultResourceDictionary());
+            Resources.Add("BaseStyle", DefaultStyle());
+            Resources.Add(TabBarStyle());
             Items.Add(DefaultTabBar());
-        }
-
-        ResourceDictionary DefaultResourceDictionary()
-        {
-            return new()
-            {
-                DefaultStyle(),
-                TabBarStyle()
-            };
         }
 
         Style DefaultStyle()
         {
             var style = new Style(typeof(Element));
-            style.Setters.Add(new Setter()
+            style.Setters.Add(new()
             {
                 Property = Shell.BackgroundColorProperty,
-                Value = App.Current.Resources.TryGetValue("Primary", out var primary) ? primary : default
+                Value = App.Current.Resources["Primary"] ?? default
+            });
+            style.Setters.Add(new()
+            {
+                Property = Shell.TabBarBackgroundColorProperty,
+                Value = App.Current.Resources["Tertiary"] ?? default
             });
             return style;
         }
@@ -34,17 +31,21 @@ namespace milkdrunk.views
         {
             var style = new Style(typeof(TabBar))
             {
-                BasedOn = Resources.TryGetValue("BaseStyle", out var baseStyle) ? (Style)baseStyle : default
+                BasedOn = (Style)Resources["BaseStyle"] ?? default
             };
             return style;
         }
 
         TabBar DefaultTabBar()
         {
-            var tabBar = new TabBar();
-            tabBar.Items.Add(HomeTab());
-            tabBar.Items.Add(SleepingTab());
-            return tabBar;
+            return new()
+            {
+                Items =
+                {
+                    HomeTab(),
+                    SleepingTab()
+                }
+            };
         }
 
         ShellContent HomeTab()

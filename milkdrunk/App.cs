@@ -68,7 +68,7 @@ namespace milkdrunk
                     new()
                     {
                         Property = Button.BackgroundColorProperty,
-                        Value = Resources.TryGetValue("Secondary", out var secondary) ? secondary : default
+                        Value = Resources["Secondary"] ?? default
                     }
                 }
             };
@@ -84,7 +84,7 @@ namespace milkdrunk
                     new()
                     {
                         Property = Button.BackgroundColorProperty,
-                        Value = Resources.TryGetValue("Disabled", out var disabled) ? disabled : default
+                        Value = Resources["Disabled"] ?? default
                     }
                 }
             };
