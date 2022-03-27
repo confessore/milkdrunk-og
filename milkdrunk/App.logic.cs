@@ -11,8 +11,8 @@ namespace milkdrunk
     {
         public App()
         {
-            InitializeComponent();
             //DependencyService.Register<MockDataStore>();
+            Build();
         }
 
         protected override async void OnStart()
@@ -21,7 +21,7 @@ namespace milkdrunk
             // this will have to be moved back into the constructor
             // when migrated to net maui
             // the renderer will crash otherwise
-            MainPage = new DefaultPage();
+            MainPage = new DefaultShell();
         }
 
         protected override void OnSleep()
