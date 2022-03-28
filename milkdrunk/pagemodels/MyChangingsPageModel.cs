@@ -1,45 +1,44 @@
 ﻿using milkdrunk.extensions;
 using milkdrunk.models;
-using milkdrunk.views;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class MySleepingsViewModel : BaseViewModel
+    class MyChangingsPageModel : BasePageModel
     {
-        public MySleepingsViewModel()
+        public MyChangingsPageModel()
         {
-            NewSleepingCommand = new Command(NewSleeping);
+            NewChangingCommand = new Command(NewChanging);
         }
 
-        ObservableCollection<Sleeping>? sleepings;
-        public ObservableCollection<Sleeping>? Sleepings
+        ObservableCollection<Changing>? changings;
+        public ObservableCollection<Changing>? Changings
         {
-            get => sleepings;
+            get => changings;
             set
             {
-                sleepings = value;
+                changings = value;
                 OnPropertyChanged();
             }
         }
 
-        public async void OnSleepingSelectionChanged(object sender, SelectionChangedEventArgs args)
+        public async void OnChangingSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             IsBusy = true;
-            //new SleepingDetailPage(SelectedSleeping ?? new Sleeping())
+            //new ChangingDetailPage(SelectedChanging ?? new Changing())
             //await Shell.Current.Navigation.PushAsync();
             IsBusy = false;
         }
 
-        public Command? NewSleepingCommand { get; }
+        public Command? NewChangingCommand { get; }
 
-        async void NewSleeping()
+        async void NewChanging()
         {
             IsBusy = true;
-            await Shell.Current.Navigation.PushAsync(new NewSleepingPage());
+            //await Shell.Current.Navigation.PushAsync(new NewChangingPage());
             IsBusy = false;
         }
 
@@ -52,10 +51,10 @@ namespace milkdrunk.viewmodels
                 var baby = Caregiver.Babies.FirstOrDefault(x => x.Id == Baby.Id);
                 if (baby != null)
                 {
-                    if (baby.Sleepings == null)
-                        Sleepings = new ObservableCollection<Sleeping>();
+                    if (baby.Changings == null)
+                        Changings = new ObservableCollection<Changing>();
                     else
-                        Sleepings = baby.Sleepings.ToObservableCollection();
+                        Changings = baby.Changings.ToObservableCollection();
                 }
             }
             IsBusy = false;

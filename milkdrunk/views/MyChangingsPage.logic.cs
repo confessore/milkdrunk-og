@@ -5,11 +5,11 @@ namespace milkdrunk.views
 {
     public partial class MyChangingsPage : ContentPage
     {
-        MyChangingsViewModel _vm;
+        MyChangingsPageModel _vm;
 
         public MyChangingsPage()
         {
-            BindingContext = _vm = new MyChangingsViewModel();
+            BindingContext = _vm = new MyChangingsPageModel();
             ToolbarItems.Add(NewChangingToolbarItem());
             Build();
         }

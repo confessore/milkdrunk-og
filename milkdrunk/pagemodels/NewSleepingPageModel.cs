@@ -5,11 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class NewSleepingViewModel : BaseViewModel
+    class NewSleepingPageModel : BasePageModel
     {
-        public NewSleepingViewModel()
+        public NewSleepingPageModel()
         {
             AddNewSleepingCommand = new Command(AddNewSleeping, CanAddNewSleeping);
         }

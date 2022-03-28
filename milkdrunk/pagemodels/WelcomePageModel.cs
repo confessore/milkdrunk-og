@@ -1,13 +1,13 @@
 ﻿using milkdrunk.models;
-using milkdrunk.views;
+using milkdrunk.shells;
 using System;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    internal class WelcomeViewModel : BaseViewModel
+    class WelcomePageModel : BasePageModel
     {
-        public WelcomeViewModel()
+        public WelcomePageModel()
         {
             ConfirmCommand = new Command(ConfirmAsync);
         }

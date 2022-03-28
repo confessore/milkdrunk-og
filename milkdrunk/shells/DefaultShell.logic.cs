@@ -1,7 +1,7 @@
 ﻿using milkdrunk.viewmodels;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.shells
 {
     public partial class DefaultShell : Shell
     {

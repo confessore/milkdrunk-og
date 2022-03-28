@@ -5,11 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class MyFeedingsViewModel : BaseViewModel
+    class MyFeedingsPageModel : BasePageModel
     {
-        public MyFeedingsViewModel()
+        public MyFeedingsPageModel()
         {
             NewFeedingCommand = new Command(NewFeeding);
         }

@@ -1,7 +1,7 @@
 ﻿using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
     public partial class PumpingPage
     {

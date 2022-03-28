@@ -2,9 +2,9 @@
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class WelcomePage
+    partial class WelcomePage
     {
         void Build()
         {
@@ -13,7 +13,7 @@ namespace milkdrunk.views
 
         StackLayout DefaultStackLayout()
         {
-            return new StackLayout()
+            return new()
             {
                 Children = {
                     new StackLayout()
@@ -41,11 +41,11 @@ namespace milkdrunk.views
                                 .Paddings(5, 5, 5, 5),
                             new Entry()
                                 .Margins(5, 5, 5, 5)
-                                .Bind(Entry.TextProperty, nameof(_vm.Name)),
+                                .Bind(Entry.TextProperty, nameof(_pm.Name)),
                             new Button() { Text = AppResources.button_confirm }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.ConfirmCommand))
+                                .Bind(Button.CommandProperty, nameof(_pm.ConfirmCommand))
                         }
                     },
                     new StackLayout()

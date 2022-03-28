@@ -5,11 +5,11 @@ namespace milkdrunk.views
 {
     public partial class MyPumpingsPage : ContentPage
     {
-        MyPumpingsViewModel _vm;
+        MyPumpingsPageModel _vm;
 
         public MyPumpingsPage()
         {
-            BindingContext = _vm = new MyPumpingsViewModel();
+            BindingContext = _vm = new MyPumpingsPageModel();
             ToolbarItems.Add(NewPumpingToolbarItem());
             Build();
         }

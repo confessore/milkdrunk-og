@@ -3,11 +3,11 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class MyPumpingsViewModel : BaseViewModel
+    class MyPumpingsPageModel : BasePageModel
     {
-        public MyPumpingsViewModel()
+        public MyPumpingsPageModel()
         {
             NewPumpingCommand = new Command(NewPumping);
         }

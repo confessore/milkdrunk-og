@@ -42,4 +42,7 @@
       <Generator></Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="shellmodels\" />
+  </ItemGroup>
 </Project>

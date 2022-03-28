@@ -1,15 +1,15 @@
 ﻿using milkdrunk.viewmodels;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class SleepingPage : ContentPage
+    public partial class PumpingPage : ContentPage
     {
-        SleepingViewModel _vm;
+        PumpingViewModel _vm;
 
-        public SleepingPage()
+        public PumpingPage()
         {
-            BindingContext = _vm = new SleepingViewModel();
+            BindingContext = _vm = new PumpingViewModel();
             Build();
         }
 
@@ -21,4 +21,3 @@ namespace milkdrunk.views
         }
     }
 }
-

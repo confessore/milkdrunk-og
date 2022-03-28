@@ -1,18 +1,18 @@
-﻿using milkdrunk.viewmodels;
+﻿using milkdrunk.pagemodels;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class WelcomePage : ContentPage
+    partial class WelcomePage : ContentPage
     {
-        WelcomeViewModel _vm;
+        WelcomePageModel _pm;
 
         public WelcomePage()
         {
             On<iOS>().SetUseSafeArea(true);
-            BindingContext = _vm = new WelcomeViewModel();
+            BindingContext = _pm = new();
             Build();
         }
     }

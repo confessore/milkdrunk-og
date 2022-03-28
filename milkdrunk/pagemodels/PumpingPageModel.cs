@@ -1,11 +1,12 @@
-﻿using milkdrunk.views;
+﻿using milkdrunk.pagemodels;
+using milkdrunk.views;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodel
 {
-    public class PumpingViewModel : BaseViewModel
+    class PumpingPageModel : BasePageModel
     {
-        public PumpingViewModel()
+        public PumpingPageModel()
         {
             MyPumpingsCommand = new Command(MyPumpings);
         }

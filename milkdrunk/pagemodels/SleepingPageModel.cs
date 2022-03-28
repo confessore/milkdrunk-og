@@ -1,11 +1,11 @@
 ﻿using milkdrunk.views;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class SleepingViewModel : BaseViewModel
+    class SleepingPageModel : BasePageModel
     {
-        public SleepingViewModel()
+        public SleepingPageModel()
         {
             MySleepingsCommand = new Command(MySleepings);
         }

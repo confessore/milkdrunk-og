@@ -3,11 +3,11 @@ using System;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class NewBabyViewModel : BaseViewModel
+    class NewBabyPageModel : BasePageModel
     {
-        public NewBabyViewModel()
+        public NewBabyPageModel()
         {
             ConfirmCommand = new Command(ConfirmAsync);
         }
