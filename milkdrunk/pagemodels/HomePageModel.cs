@@ -1,7 +1,7 @@
-﻿using milkdrunk.models;
-using milkdrunk.views;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using milkdrunk.models;
+using milkdrunk.pages;
 using Xamarin.Forms;
 
 namespace milkdrunk.pagemodels

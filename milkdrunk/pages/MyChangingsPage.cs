@@ -1,23 +1,24 @@
 ﻿using milkdrunk.models;
+using milkdrunk.views;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class MyPumpingsPage
+    partial class MyChangingsPage
     {
         void Build()
         {
             Content = DefaultStackLayout();
         }
 
-        ToolbarItem NewPumpingToolbarItem()
+        ToolbarItem NewChangingToolbarItem()
         {
             return new ToolbarItem()
             {
-                Text = "new pumping"
+                Text = "new changing"
             }
-            .Bind(ToolbarItem.CommandProperty, nameof(_vm.NewPumpingCommand));
+            .Bind(ToolbarItem.CommandProperty, nameof(_pm.NewChangingCommand));
         }
 
         StackLayout DefaultStackLayout()
@@ -30,7 +31,7 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.Start,
                         Children =
                         {
-                            new Label() { Text = "my pumpings" }
+                            new Label() { Text = "my changings" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
@@ -42,8 +43,8 @@ namespace milkdrunk.views
                         Children =
                         {
                             DefaultCollectionView()
-                                //.Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedPumping))
-                                .Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Pumpings))
+                                //.Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedChanging))
+                                .Bind(CollectionView.ItemsSourceProperty, nameof(_pm.Changings))
                         }
                     },
                     new StackLayout()
@@ -66,7 +67,7 @@ namespace milkdrunk.views
                 SelectionMode = SelectionMode.Single,
                 ItemTemplate = DefaultDataTemplate()
             };
-            //collectionView.SelectionChanged += _vm.OnPumpingSelectionChanged;
+            //collectionView.SelectionChanged += _vm.OnChangingSelectionChanged;
             return collectionView;
         }
 
@@ -78,9 +79,9 @@ namespace milkdrunk.views
                     Children =
                     {
                         new Label()
-                            .Bind(Label.TextProperty, nameof(Pumping.Time)),
+                        .Bind(Label.TextProperty, nameof(Changing.Time)),
                         new Label()
-                            .Bind(Label.TextProperty, nameof(Pumping.FluidOunces))
+                        .Bind(Label.TextProperty, nameof(Changing.ChangingType))
                     }
                 });
         }

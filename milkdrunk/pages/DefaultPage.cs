@@ -1,8 +1,8 @@
 ﻿using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class DefaultPage
+    partial class DefaultPage
     {
         void Build()
         {

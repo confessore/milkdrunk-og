@@ -1,9 +1,10 @@
-﻿using Xamarin.CommunityToolkit.Markup;
+﻿using milkdrunk.views;
+using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class BabyDetailPage
+    partial class BabyDetailPage
     {
         void Build()
         {
@@ -35,20 +36,20 @@ namespace milkdrunk.views
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
-                                .Bind(Label.TextProperty, nameof(_vm.Name)),
+                                .Bind(Label.TextProperty, nameof(_pm.Name)),
                            new Label()
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
-                                .Bind(Label.TextProperty, nameof(_vm.BirthDate)),
+                                .Bind(Label.TextProperty, nameof(_pm.BirthDate)),
                             new Button() { Text = "edit baby" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.EditBabyCommand)),
+                                .Bind(Button.CommandProperty, nameof(_pm.EditBabyCommand)),
                             new Button() { Text = "set default baby" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.SetDefaultBabyCommand))
+                                .Bind(Button.CommandProperty, nameof(_pm.SetDefaultBabyCommand))
                         }
                     },
                     new StackLayout()

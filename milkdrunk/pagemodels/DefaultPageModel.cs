@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace milkdrunk.pagemodels
 {
-    class DefaultViewModel : BasePageModel
+    class DefaultPageModel : BasePageModel
     {
         new public virtual async Task OnAppearingAsync()
         {

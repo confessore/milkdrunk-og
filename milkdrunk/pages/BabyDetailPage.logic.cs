@@ -1,15 +1,17 @@
-﻿using milkdrunk.pagemodels;
+﻿using milkdrunk.models;
+using milkdrunk.pagemodels;
 using Xamarin.Forms;
 
 namespace milkdrunk.pages
 {
-    partial class SleepingPage : ContentPage
+    partial class BabyDetailPage : ContentPage
     {
-        SleepingPageModel _pm;
+        BabyDetailPageModel _pm;
 
-        public SleepingPage()
+        public BabyDetailPage(
+            Baby baby)
         {
-            BindingContext = _pm = new SleepingPageModel();
+            BindingContext = _pm = new BabyDetailPageModel(baby);
             Build();
         }
 
@@ -21,4 +23,3 @@ namespace milkdrunk.pages
         }
     }
 }
-

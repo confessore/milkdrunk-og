@@ -1,8 +1,8 @@
-﻿using milkdrunk.extensions;
-using milkdrunk.models;
-using milkdrunk.views;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using milkdrunk.extensions;
+using milkdrunk.models;
+using milkdrunk.pages;
 using Xamarin.Forms;
 
 namespace milkdrunk.pagemodels

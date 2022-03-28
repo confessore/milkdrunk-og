@@ -1,8 +1,8 @@
-﻿using milkdrunk.models;
+﻿using System.Threading.Tasks;
+using milkdrunk.models;
+using milkdrunk.pages;
 using milkdrunk.services;
 using milkdrunk.services.interfaces;
-using milkdrunk.views;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace milkdrunk

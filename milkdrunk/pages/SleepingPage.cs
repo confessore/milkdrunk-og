@@ -1,9 +1,10 @@
-﻿using Xamarin.CommunityToolkit.Markup;
+﻿using milkdrunk.views;
+using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
 namespace milkdrunk.pages
 {
-    public partial class SleepingPage
+    partial class SleepingPage
     {
         void Build()
         {
@@ -34,7 +35,7 @@ namespace milkdrunk.pages
                             new Button() { Text = "my sleepings" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.MySleepingsCommand))
+                                .Bind(Button.CommandProperty, nameof(_pm.MySleepingsCommand))
                         }
                     },
                     new StackLayout()

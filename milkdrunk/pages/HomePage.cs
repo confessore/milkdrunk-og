@@ -1,9 +1,10 @@
-﻿using Xamarin.CommunityToolkit.Markup;
+﻿using milkdrunk.views;
+using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class NewBabyPage
+    partial class HomePage
     {
         void Build()
         {
@@ -20,7 +21,7 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.Start,
                         Children =
                         {
-                            new Label() { Text = "new baby" }
+                            new Label() { Text = "home" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
@@ -31,17 +32,21 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.StartAndExpand,
                         Children =
                         {
-                            new Entry() { Placeholder = "name" }
-                                .Margins(5, 5, 5, 5)
-                                .Bind(Entry.TextProperty, nameof(_vm.Name)),
-                            new Label() { Text = "birthday" },
-                            new DatePicker()
-                                .Margins(5, 5, 5, 5)
-                                .Bind(DatePicker.DateProperty, nameof(_vm.BirthDate)),
-                            new Button() { Text = "confirm" }
+                            new Label()
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.ConfirmCommand))
+                                .CenterHorizontal()
+                                .Bind(Label.TextProperty, nameof(_pm.Greeting)),
+                            new Button() { Text = "my babies" }
+                                .Margins(5, 5, 5, 5)
+                                .Paddings(5, 5, 5, 5)
+                                .Bind(Button.CommandProperty, nameof(_pm.MyBabiesCommand)),
+                            new Button() { Text = "my caregroup", IsEnabled = false}
+                                .Margins(5, 5, 5, 5)
+                                .Paddings(5, 5, 5, 5),
+                            new Button() { Text = "caregiver settings" }
+                                .Margins(5, 5, 5, 5)
+                                .Paddings(5, 5, 5, 5)
                         }
                     },
                     new StackLayout()

@@ -1,10 +1,11 @@
 ﻿using milkdrunk.models;
+using milkdrunk.views;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class MyBabiesPage
+    partial class MyBabiesPage
     {
         void Build()
         {
@@ -17,7 +18,7 @@ namespace milkdrunk.views
             {
                 Text = "new baby"
             }
-            .Bind(ToolbarItem.CommandProperty, nameof(_vm.NewBabyCommand));
+            .Bind(ToolbarItem.CommandProperty, nameof(_pm.NewBabyCommand));
         }
 
         StackLayout DefaultStackLayout()
@@ -42,8 +43,8 @@ namespace milkdrunk.views
                         Children =
                         {
                             DefaultCollectionView()
-                                .Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedBaby))
-                                .Bind(CollectionView.ItemsSourceProperty, nameof(_vm.Babies))
+                                .Bind(CollectionView.SelectedItemProperty, nameof(_pm.SelectedBaby))
+                                .Bind(CollectionView.ItemsSourceProperty, nameof(_pm.Babies))
                         }
                     },
                     new StackLayout()
@@ -66,7 +67,7 @@ namespace milkdrunk.views
                 SelectionMode = SelectionMode.Single,
                 ItemTemplate = DefaultDataTemplate()
             };
-            collectionView.SelectionChanged += _vm.OnBabySelectionChanged;
+            collectionView.SelectionChanged += _pm.OnBabySelectionChanged;
             return collectionView;
         }
 

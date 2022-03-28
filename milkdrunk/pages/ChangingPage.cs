@@ -1,9 +1,10 @@
-﻿using Xamarin.CommunityToolkit.Markup;
+﻿using milkdrunk.views;
+using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class HomePage
+    partial class ChangingPage
     {
         void Build()
         {
@@ -20,7 +21,7 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.Start,
                         Children =
                         {
-                            new Label() { Text = "home" }
+                            new Label() { Text = "changing" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
@@ -31,21 +32,10 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.StartAndExpand,
                         Children =
                         {
-                            new Label()
+                            new Button() { Text = "my changings" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .CenterHorizontal()
-                                .Bind(Label.TextProperty, nameof(_vm.Greeting)),
-                            new Button() { Text = "my babies" }
-                                .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.MyBabiesCommand)),
-                            new Button() { Text = "my caregroup", IsEnabled = false}
-                                .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5),
-                            new Button() { Text = "caregiver settings" }
-                                .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5)
+                                .Bind(Button.CommandProperty, nameof(_pm.MyChangingsCommand))
                         }
                     },
                     new StackLayout()

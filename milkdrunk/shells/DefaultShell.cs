@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using milkdrunk.pages;
+using Xamarin.Forms;
 
 namespace milkdrunk.shells
 {

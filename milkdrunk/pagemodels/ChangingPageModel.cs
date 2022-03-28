@@ -1,6 +1,6 @@
-﻿using milkdrunk.models;
-using milkdrunk.views;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using milkdrunk.models;
+using milkdrunk.pages;
 using Xamarin.Forms;
 
 namespace milkdrunk.pagemodels

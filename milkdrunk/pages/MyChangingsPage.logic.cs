@@ -3,13 +3,14 @@ using Xamarin.Forms;
 
 namespace milkdrunk.pages
 {
-    partial class SleepingPage : ContentPage
+    partial class MyChangingsPage : ContentPage
     {
-        SleepingPageModel _pm;
+        MyChangingsPageModel _pm;
 
-        public SleepingPage()
+        public MyChangingsPage()
         {
-            BindingContext = _pm = new SleepingPageModel();
+            BindingContext = _pm = new MyChangingsPageModel();
+            ToolbarItems.Add(NewChangingToolbarItem());
             Build();
         }
 
@@ -21,4 +22,3 @@ namespace milkdrunk.pages
         }
     }
 }
-

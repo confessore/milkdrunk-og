@@ -1,10 +1,11 @@
 ﻿using milkdrunk.resources;
+using milkdrunk.views;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class NewSleepingPage
+    partial class NewSleepingPage
     {
         void Build()
         {
@@ -42,10 +43,10 @@ namespace milkdrunk.views
                                 {
                                     new DatePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(DatePicker.DateProperty, nameof(_vm.StartDate)),
+                                        .Bind(DatePicker.DateProperty, nameof(_pm.StartDate)),
                                     new TimePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(TimePicker.TimeProperty, nameof(_vm.StartTime))
+                                        .Bind(TimePicker.TimeProperty, nameof(_pm.StartTime))
                                 }
                             },
                             new Label() { Text = "log end now?"}
@@ -53,11 +54,11 @@ namespace milkdrunk.views
                                 .Paddings(5, 5, 5, 5),
                             new CheckBox()
                                 .Margins(5, 5, 5, 5)
-                                .Bind(CheckBox.IsCheckedProperty, nameof(_vm.IsChecked)),
+                                .Bind(CheckBox.IsCheckedProperty, nameof(_pm.IsChecked)),
                             new Label() { Text = "end" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Label.IsVisibleProperty, nameof(_vm.IsChecked)),
+                                .Bind(Label.IsVisibleProperty, nameof(_pm.IsChecked)),
                             new StackLayout()
                             {
                                 Orientation = StackOrientation.Horizontal,
@@ -65,18 +66,18 @@ namespace milkdrunk.views
                                 {
                                     new DatePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(DatePicker.DateProperty, nameof(_vm.EndDate))
-                                        .Bind(DatePicker.IsVisibleProperty, nameof(_vm.IsChecked)),
+                                        .Bind(DatePicker.DateProperty, nameof(_pm.EndDate))
+                                        .Bind(DatePicker.IsVisibleProperty, nameof(_pm.IsChecked)),
                                     new TimePicker()
                                         .Margins(5, 5, 5, 5)
-                                        .Bind(TimePicker.TimeProperty, nameof(_vm.EndTime))
-                                        .Bind(TimePicker.IsVisibleProperty, nameof(_vm.IsChecked))
+                                        .Bind(TimePicker.TimeProperty, nameof(_pm.EndTime))
+                                        .Bind(TimePicker.IsVisibleProperty, nameof(_pm.IsChecked))
                                 }
                             },
                             new Button() { Text = AppResources.button_confirm }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.AddNewSleepingCommand))
+                                .Bind(Button.CommandProperty, nameof(_pm.AddNewSleepingCommand))
                         }
                     },
                     new StackLayout()

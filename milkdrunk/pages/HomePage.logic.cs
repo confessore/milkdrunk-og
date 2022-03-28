@@ -3,13 +3,13 @@ using Xamarin.Forms;
 
 namespace milkdrunk.pages
 {
-    partial class SleepingPage : ContentPage
+    partial class HomePage : ContentPage
     {
-        SleepingPageModel _pm;
+        HomePageModel _pm;
 
-        public SleepingPage()
+        public HomePage()
         {
-            BindingContext = _pm = new SleepingPageModel();
+            BindingContext = _pm = new HomePageModel();
             Build();
         }
 
@@ -21,4 +21,3 @@ namespace milkdrunk.pages
         }
     }
 }
-

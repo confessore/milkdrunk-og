@@ -1,26 +1,26 @@
-﻿using milkdrunk.viewmodels;
+﻿using milkdrunk.pagemodels;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class NewBabyPage : ContentPage
+    partial class NewBabyPage : ContentPage
     {
-        NewBabyViewModel _vm;
+        NewBabyPageModel _pm;
 
         public NewBabyPage()
         {
             On<iOS>().SetUseSafeArea(true);
-            BindingContext = _vm = new NewBabyViewModel();
+            BindingContext = _pm = new NewBabyPageModel();
             Build();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await _vm.OnAppearingAsync();
-            Title = _vm.Title;
+            await _pm.OnAppearingAsync();
+            Title = _pm.Title;
         }
     }
 }

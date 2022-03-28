@@ -1,4 +1,4 @@
-﻿using milkdrunk.views;
+﻿using milkdrunk.pages;
 using Xamarin.Forms;
 
 namespace milkdrunk.pagemodels

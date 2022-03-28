@@ -1,9 +1,10 @@
-﻿using Xamarin.CommunityToolkit.Markup;
+﻿using milkdrunk.views;
+using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
-namespace milkdrunk.views
+namespace milkdrunk.pages
 {
-    public partial class FeedingPage
+    partial class NewBabyPage
     {
         void Build()
         {
@@ -20,7 +21,7 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.Start,
                         Children =
                         {
-                            new Label() { Text = "feeding" }
+                            new Label() { Text = "new baby" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
@@ -31,10 +32,17 @@ namespace milkdrunk.views
                         VerticalOptions = LayoutOptions.StartAndExpand,
                         Children =
                         {
-                            new Button() { Text = "my feedings" }
+                            new Entry() { Placeholder = "name" }
+                                .Margins(5, 5, 5, 5)
+                                .Bind(Entry.TextProperty, nameof(_pm.Name)),
+                            new Label() { Text = "birthday" },
+                            new DatePicker()
+                                .Margins(5, 5, 5, 5)
+                                .Bind(DatePicker.DateProperty, nameof(_pm.BirthDate)),
+                            new Button() { Text = "confirm" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_vm.MyFeedingsCommand))
+                                .Bind(Button.CommandProperty, nameof(_pm.ConfirmCommand))
                         }
                     },
                     new StackLayout()
