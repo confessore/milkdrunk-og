@@ -5,11 +5,11 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class MyBabiesViewModel : BaseViewModel
+    class MyBabiesPageModel : BasePageModel
     {
-        public MyBabiesViewModel()
+        public MyBabiesPageModel()
         {
             NewBabyCommand = new Command(NewBaby);
         }

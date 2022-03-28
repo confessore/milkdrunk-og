@@ -1,7 +1,7 @@
 ﻿namespace milkdrunk.viewmodels
 {
     //[QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public class ItemDetailViewModel : BaseViewModel
+    public class ItemDetailViewModel : BasePageModel
     {
         /*private string itemId;
         private string text;

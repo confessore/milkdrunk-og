@@ -1,10 +1,11 @@
 ﻿using milkdrunk.models;
-using milkdrunk.views;
+using milkdrunk.pages;
+using milkdrunk.shells;
 using System.Threading.Tasks;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class DefaultViewModel : BaseViewModel
+    class DefaultViewModel : BasePageModel
     {
         new public virtual async Task OnAppearingAsync()
         {

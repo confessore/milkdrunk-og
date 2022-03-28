@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BasePageModel : INotifyPropertyChanged
     {
         public IDefaultService _defaultService =>
             DependencyService.Get<IDefaultService>();

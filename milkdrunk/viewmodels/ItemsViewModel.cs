@@ -1,6 +1,6 @@
 ﻿namespace milkdrunk.viewmodels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class ItemsViewModel : BasePageModel
     {
         /*private Item _selectedItem;
 

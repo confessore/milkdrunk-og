@@ -4,11 +4,11 @@ using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class HomeViewModel : BaseViewModel
+    class HomePageModel : BasePageModel
     {
-        public HomeViewModel()
+        public HomePageModel()
         {
             MyBabiesCommand = new Command(MyBabies);
             CreateCaregroupCommand = new Command(CreateCaregroupAsync);

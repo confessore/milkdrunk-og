@@ -1,11 +1,11 @@
 ﻿using milkdrunk.models;
 using System.Collections.ObjectModel;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class ChangingDetailViewModel : BaseViewModel
+    class ChangingDetailPageModel : BasePageModel
     {
-        public ChangingDetailViewModel()
+        public ChangingDetailPageModel()
         {
         }
 

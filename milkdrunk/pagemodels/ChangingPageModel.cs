@@ -3,11 +3,11 @@ using milkdrunk.views;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class ChangingViewModel : BaseViewModel
+    class ChangingPageModel : BasePageModel
     {
-        public ChangingViewModel()
+        public ChangingPageModel()
         {
             MyChangingsCommand = new Command(MyChangings);
         }

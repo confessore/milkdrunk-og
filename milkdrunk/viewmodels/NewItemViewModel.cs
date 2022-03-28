@@ -1,6 +1,6 @@
 ﻿namespace milkdrunk.viewmodels
 {
-    public class NewItemViewModel : BaseViewModel
+    public class NewItemViewModel : BasePageModel
     {
         /*private string text;
         private string description;

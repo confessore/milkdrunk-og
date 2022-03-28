@@ -1,11 +1,11 @@
 ﻿using milkdrunk.views;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class FeedingViewModel : BaseViewModel
+    class FeedingPageModel : BasePageModel
     {
-        public FeedingViewModel()
+        public FeedingPageModel()
         {
             MyFeedingsCommand = new Command(MyFeedings);
         }

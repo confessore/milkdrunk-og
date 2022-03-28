@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
 {
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : BasePageModel
     {
         public Command LoginCommand { get; }
 

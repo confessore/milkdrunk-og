@@ -3,11 +3,11 @@ using System;
 using System.Linq;
 using Xamarin.Forms;
 
-namespace milkdrunk.viewmodels
+namespace milkdrunk.pagemodels
 {
-    public class BabyDetailViewModel : BaseViewModel
+    class BabyDetailPageModel : BasePageModel
     {
-        public BabyDetailViewModel(
+        public BabyDetailPageModel(
             Baby baby)
         {
             EditBabyCommand = new Command(EditBaby);

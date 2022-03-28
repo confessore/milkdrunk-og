@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace milkdrunk.viewmodels
 {
-    public class AboutViewModel : BaseViewModel
+    public class AboutViewModel : BasePageModel
     {
         public AboutViewModel()
         {
