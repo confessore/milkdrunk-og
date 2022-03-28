@@ -1,4 +1,5 @@
 ﻿using milkdrunk.models;
+using milkdrunk.views;
 using System;
 using Xamarin.Forms;
 
@@ -33,7 +34,7 @@ namespace milkdrunk.viewmodels
                 Name = Name
             };
             await _localStorageService.WriteToFileAsync(caregiver, "caregiver");
-            App.Current.MainPage = new AppShell();
+            App.Current.MainPage = new DefaultShell();
             IsBusy = false;
         }
     }

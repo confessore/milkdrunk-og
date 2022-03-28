@@ -13,7 +13,7 @@ namespace milkdrunk.viewmodels
             if (caregiver != null)
             {
                 await Task.Delay(1000);
-                App.Current.MainPage = new AppShell();
+                App.Current.MainPage = new DefaultShell();
             }
             else
                 App.Current.MainPage = new WelcomePage();

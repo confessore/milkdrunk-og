@@ -8,6 +8,7 @@ namespace milkdrunk.views
         {
             Resources.Add("BaseStyle", DefaultStyle());
             Resources.Add(TabBarStyle());
+            Resources.Add(FlyoutItemStyle());
             Items.Add(DefaultTabBar());
         }
 
@@ -21,8 +22,43 @@ namespace milkdrunk.views
             });
             style.Setters.Add(new()
             {
+                Property = Shell.ForegroundColorProperty,
+                Value = Color.White
+            });
+            style.Setters.Add(new()
+            {
+                Property = Shell.TitleColorProperty,
+                Value = Color.White
+            });
+            style.Setters.Add(new()
+            {
+                Property = Shell.DisabledColorProperty,
+                Value = Color.FromHex("#B4FFFFFF")
+            });
+            style.Setters.Add(new()
+            {
+                Property = Shell.UnselectedColorProperty,
+                Value = Color.FromHex("#95FFFFFF")
+            });
+            style.Setters.Add(new()
+            {
                 Property = Shell.TabBarBackgroundColorProperty,
                 Value = App.Current.Resources["Tertiary"] ?? default
+            });
+            style.Setters.Add(new()
+            {
+                Property = Shell.TabBarForegroundColorProperty,
+                Value = Color.White
+            });
+            style.Setters.Add(new()
+            {
+                Property = Shell.TabBarUnselectedColorProperty,
+                Value = Color.FromHex("#95FFFFFF")
+            });
+            style.Setters.Add(new()
+            {
+                Property = Shell.TabBarTitleColorProperty,
+                Value = Color.White
             });
             return style;
         }
@@ -36,6 +72,15 @@ namespace milkdrunk.views
             return style;
         }
 
+        Style FlyoutItemStyle()
+        {
+            var style = new Style(typeof(FlyoutItem))
+            {
+                BasedOn = (Style)Resources["BaseStyle"] ?? default
+            };
+            return style;
+        }
+
         TabBar DefaultTabBar()
         {
             return new()
@@ -43,7 +88,10 @@ namespace milkdrunk.views
                 Items =
                 {
                     HomeTab(),
-                    SleepingTab()
+                    ChangingTab(),
+                    FeedingTab(),
+                    SleepingTab(),
+                    PumpingTab()
                 }
             };
         }
@@ -59,6 +107,28 @@ namespace milkdrunk.views
             };
         }
 
+        ShellContent ChangingTab()
+        {
+            return new()
+            {
+                Title = "changing",
+                Icon = "diaper.png",
+                Route = "ChangingPage",
+                ContentTemplate = new DataTemplate(typeof(ChangingPage)),
+            };
+        }
+
+        ShellContent FeedingTab()
+        {
+            return new()
+            {
+                Title = "feeding",
+                Icon = "bottle.png",
+                Route = "FeedingPage",
+                ContentTemplate = new DataTemplate(typeof(FeedingPage)),
+            };
+        }
+
         ShellContent SleepingTab()
         {
             return new()
@@ -67,6 +137,17 @@ namespace milkdrunk.views
                 Icon = "sleep.png",
                 Route = "SleepingPage",
                 ContentTemplate = new DataTemplate(typeof(SleepingPage)),
+            };
+        }
+
+        ShellContent PumpingTab()
+        {
+            return new()
+            {
+                Title = "pumping",
+                Icon = "pump.png",
+                Route = "PumpingPage",
+                ContentTemplate = new DataTemplate(typeof(PumpingPage)),
             };
         }
     }

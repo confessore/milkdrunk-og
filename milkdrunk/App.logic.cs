@@ -21,7 +21,7 @@ namespace milkdrunk
             // this will have to be moved back into the constructor
             // when migrated to net maui
             // the renderer will crash otherwise
-            MainPage = new DefaultShell();
+            MainPage = new DefaultPage();
         }
 
         protected override void OnSleep()
