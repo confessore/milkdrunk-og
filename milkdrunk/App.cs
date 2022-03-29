@@ -2,7 +2,7 @@
 
 namespace milkdrunk
 {
-    public partial class App
+    partial class App
     {
         void Build()
         {
