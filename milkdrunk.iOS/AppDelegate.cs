@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using FFImageLoading.Forms.Platform;
+using Foundation;
 using Google.MobileAds;
 using UIKit;
 
@@ -19,6 +20,7 @@ namespace milkdrunk.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            CachedImageRenderer.Init();
             MobileAds.SharedInstance.Start(null);
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace milkdrunk
 {
-    partial class App : Application
+    public partial class App : Application
     {
         public App()
         {
