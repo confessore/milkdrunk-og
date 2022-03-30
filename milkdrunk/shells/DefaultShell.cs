@@ -113,7 +113,7 @@ namespace milkdrunk.shells
             return new()
             {
                 Title = "changing",
-                Icon = "diaper.png",
+                Icon = "changing.png",
                 Route = "ChangingPage",
                 ContentTemplate = new DataTemplate(typeof(ChangingPage)),
             };
@@ -124,7 +124,7 @@ namespace milkdrunk.shells
             return new()
             {
                 Title = "feeding",
-                Icon = new FileImageSource(),
+                Icon = "feeding.png",
                 Route = "FeedingPage",
                 ContentTemplate = new DataTemplate(typeof(FeedingPage)),
             };
@@ -135,7 +135,7 @@ namespace milkdrunk.shells
             return new()
             {
                 Title = "sleeping",
-                Icon = "sleep.png",
+                Icon = "sleeping.png",
                 Route = "SleepingPage",
                 ContentTemplate = new DataTemplate(typeof(SleepingPage)),
             };
@@ -146,7 +146,7 @@ namespace milkdrunk.shells
             return new()
             {
                 Title = "pumping",
-                Icon = "pump.png",
+                Icon = "pumping.png",
                 Route = "PumpingPage",
                 ContentTemplate = new DataTemplate(typeof(PumpingPage)),
             };

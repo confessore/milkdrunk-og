@@ -242,4 +242,40 @@
   <ItemGroup>
     <BundleResource Include="Resources\home%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\changing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\changing%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\changing%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feeding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feeding%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feeding%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pumping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pumping%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pumping%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sleeping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sleeping%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sleeping%403x.png" />
+  </ItemGroup>
 </Project>
