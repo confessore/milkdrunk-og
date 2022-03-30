@@ -236,4 +236,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\pump.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home%402x.png" />
+  </ItemGroup>
 </Project>

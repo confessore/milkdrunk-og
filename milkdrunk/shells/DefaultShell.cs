@@ -1,7 +1,4 @@
-﻿using FFImageLoading.Forms;
-using FFImageLoading.Svg.Forms;
-using milkdrunk.pages;
-using milkdrunk.views;
+﻿using milkdrunk.pages;
 using Xamarin.Forms;
 
 namespace milkdrunk.shells
@@ -100,18 +97,12 @@ namespace milkdrunk.shells
             };
         }
 
-        // double check to make sure that you set the resources to build as embedded
-        // you can just select all of them in vs2022, right click to properties and set to embedded resource
-        // if there are alot (15+), the UI will get blocked but should respond when processing completes
-        const string resources = "resource://milkdrunk.resources.";
-        static string ToUri(string resource) => string.Concat(resources, resource);
-
-        DefaultShellContent HomeTab()
+        ShellContent HomeTab()
         {
             return new()
             {
                 Title = "home",
-                Icon = new SvgCachedImage() { Source = "resource://milkdrunk.resources.home.png", HeightRequest = 64 },
+                Icon = "home.png",
                 Route = "HomePage",
                 ContentTemplate = new DataTemplate(typeof(HomePage)),
             };
@@ -150,12 +141,12 @@ namespace milkdrunk.shells
             };
         }
 
-        DefaultShellContent PumpingTab()
+        ShellContent PumpingTab()
         {
             return new()
             {
                 Title = "pumping",
-                Icon = new SvgCachedImage() { Source = ToUri("pump.png"), HeightRequest = 28, WidthRequest = 28 },
+                Icon = "pump.png",
                 Route = "PumpingPage",
                 ContentTemplate = new DataTemplate(typeof(PumpingPage)),
             };

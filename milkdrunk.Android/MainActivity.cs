@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.Gms.Ads;
 using Android.OS;
 using Android.Runtime;
+using FFImageLoading.Forms.Platform;
 
 namespace milkdrunk.Droid
 {
@@ -13,6 +14,7 @@ namespace milkdrunk.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            CachedImageRenderer.Init(true);
             MobileAds.Initialize(ApplicationContext);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

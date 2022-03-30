@@ -27,7 +27,6 @@
     <None Remove="LiteDB" />
     <None Remove="System.Text.Json" />
     <None Remove="Xamarin.FFImageLoading.Svg.Forms" />
-    <None Remove="resources\home.png" />
     <None Remove="resources\pump.png" />
   </ItemGroup>
   <ItemGroup>
@@ -38,7 +37,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="resources\home.png" />
     <EmbeddedResource Include="resources\pump.png" />
   </ItemGroup>
   <ItemGroup>
