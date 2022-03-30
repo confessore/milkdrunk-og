@@ -23,12 +23,10 @@
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="resources\home.png" />
     <None Remove="Serilog" />
     <None Remove="LiteDB" />
     <None Remove="System.Text.Json" />
     <None Remove="Xamarin.FFImageLoading.Svg.Forms" />
-    <None Remove="resources\pump.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="resources\AppResources.Designer.cs">
@@ -36,10 +34,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="resources\home.png" />
-    <EmbeddedResource Include="resources\pump.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="resources\AppResources.resx">
