@@ -183,43 +183,43 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk87.png" />
+    <AndroidResource Include="Resources\milkdrunk87.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk1024.png" />
+    <AndroidResource Include="Resources\milkdrunk1024.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk120.png" />
+    <AndroidResource Include="Resources\milkdrunk120.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk152.png" />
+    <AndroidResource Include="Resources\milkdrunk152.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk167.png" />
+    <AndroidResource Include="Resources\milkdrunk167.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk180.png" />
+    <AndroidResource Include="Resources\milkdrunk180.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk20.png" />
+    <AndroidResource Include="Resources\milkdrunk20.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk29.png" />
+    <AndroidResource Include="Resources\milkdrunk29.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk40.png" />
+    <AndroidResource Include="Resources\milkdrunk40.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk58.png" />
+    <AndroidResource Include="Resources\milkdrunk58.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk60.png" />
+    <AndroidResource Include="Resources\milkdrunk60.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk76.png" />
+    <AndroidResource Include="Resources\milkdrunk76.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\milkdrunk80.png" />
+    <AndroidResource Include="Resources\milkdrunk80.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\diaper.png" />
@@ -277,5 +277,35 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\sleeping%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk216.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\milkdrunk432.png" />
   </ItemGroup>
 </Project>
