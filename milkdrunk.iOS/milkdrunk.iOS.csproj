@@ -222,19 +222,7 @@
     <AndroidResource Include="Resources\milkdrunk80.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\diaper.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\sleep.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\bottle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\pump.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\home%403x.png" />

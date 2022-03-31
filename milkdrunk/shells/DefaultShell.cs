@@ -33,7 +33,7 @@ namespace milkdrunk.shells
             });
             style.Setters.Add(new()
             {
-                Property = Shell.DisabledColorProperty,
+                Property = Shell.DisabledColorProperty, 
                 Value = Color.FromHex("#B4FFFFFF")
             });
             style.Setters.Add(new()
