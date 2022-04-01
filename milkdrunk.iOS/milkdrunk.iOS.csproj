@@ -240,15 +240,6 @@
     <BundleResource Include="Resources\changing%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\feeding.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\feeding%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\feeding%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\pumping.png" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +247,15 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\pumping%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feeding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feeding%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feeding%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\sleeping.png" />
