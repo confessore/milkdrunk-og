@@ -74,16 +74,25 @@ namespace milkdrunk.pages
         DataTemplate DefaultDataTemplate()
         {
             return new DataTemplate(() =>
-                new StackLayout()
+                new Frame()
                 {
-                    Children =
-                    {
-                        new Label()
-                        .Bind(Label.TextProperty, nameof(Sleeping.Start)),
-                        new Label()
-                        .Bind(Label.TextProperty, nameof(Sleeping.End))
-                    }
+                    BorderColor = (Color)(App.Current.Resources["Primary"] ?? Color.Red),
+                    Content =
+                        new StackLayout()
+                        {
+                            Children =
+                            {
+                                new Label()
+                                    .Margins(5, 5, 5, 5)
+                                    .Paddings(5, 5, 5, 5)
+                                    .Bind(Label.TextProperty, nameof(Sleeping.Start)),
+                                new Label()
+                                    .Margins(5, 5, 5, 5)
+                                    .Paddings(5, 5, 5, 5)
+                                    .Bind(Label.TextProperty, nameof(Sleeping.End))
+                            }
+                        }
                 });
-        }
+        }   
     }
 }
