@@ -3,13 +3,13 @@ using Xamarin.Forms;
 
 namespace milkdrunk.pages
 {
-    partial class HomePage : ContentPage
+    partial class EditBabyPage : ContentPage
     {
-        HomePageModel _pm;
+        EditBabyPageModel _pm;
 
-        public HomePage()
+        public EditBabyPage()
         {
-            BindingContext = _pm = new HomePageModel();
+            BindingContext = _pm = new EditBabyPageModel();
             Build();
         }
 

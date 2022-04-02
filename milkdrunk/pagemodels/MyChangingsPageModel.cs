@@ -25,7 +25,7 @@ namespace milkdrunk.pagemodels
             }
         }
 
-        public async void OnChangingSelectionChanged(object sender, SelectionChangedEventArgs args)
+        public void OnChangingSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             IsBusy = true;
             //new ChangingDetailPage(SelectedChanging ?? new Changing())
