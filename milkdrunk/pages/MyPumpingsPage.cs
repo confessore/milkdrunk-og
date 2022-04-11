@@ -1,4 +1,5 @@
 ﻿using milkdrunk.models;
+using milkdrunk.resources;
 using milkdrunk.views;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
@@ -16,7 +17,7 @@ namespace milkdrunk.pages
         {
             return new ToolbarItem()
             {
-                Text = "new pumping"
+                Text = AppResources.add_new
             }
             .Bind(ToolbarItem.CommandProperty, nameof(_pm.NewPumpingCommand));
         }

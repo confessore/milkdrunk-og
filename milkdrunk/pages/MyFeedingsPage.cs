@@ -1,4 +1,5 @@
 ﻿using milkdrunk.models;
+using milkdrunk.resources;
 using milkdrunk.views;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
@@ -16,7 +17,7 @@ namespace milkdrunk.pages
         {
             return new ToolbarItem()
             {
-                Text = "new feeding"
+                Text = AppResources.add_new
             }
             .Bind(ToolbarItem.CommandProperty, nameof(_pm.NewFeedingCommand));
         }
@@ -31,7 +32,7 @@ namespace milkdrunk.pages
                         VerticalOptions = LayoutOptions.Start,
                         Children =
                         {
-                            new Label() { Text = "my feedings" }
+                            new Label() { Text = "feedings" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
