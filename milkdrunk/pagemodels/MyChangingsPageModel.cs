@@ -1,5 +1,6 @@
 ﻿using milkdrunk.extensions;
 using milkdrunk.models;
+using milkdrunk.pages;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,6 +26,17 @@ namespace milkdrunk.pagemodels
             }
         }
 
+        Changing? selectedChanging;
+        public Changing? SelectedChanging
+        {
+            get => selectedChanging;
+            set
+            {
+                selectedChanging = value;
+                OnPropertyChanged();
+            }
+        }
+
         public void OnChangingSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             IsBusy = true;
@@ -38,7 +50,7 @@ namespace milkdrunk.pagemodels
         async void NewChanging()
         {
             IsBusy = true;
-            //await Shell.Current.Navigation.PushAsync(new NewChangingPage());
+            await Shell.Current.Navigation.PushAsync(new NewChangingPage());
             IsBusy = false;
         }
 

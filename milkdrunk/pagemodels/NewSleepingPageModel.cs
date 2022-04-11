@@ -12,6 +12,8 @@ namespace milkdrunk.pagemodels
         public NewSleepingPageModel()
         {
             AddNewSleepingCommand = new Command(AddNewSleeping, CanAddNewSleeping);
+            PropertyChanged +=
+                (obj, args) => AddNewSleepingCommand.ChangeCanExecute();
         }
 
         DateTime startDate = DateTime.Now;
@@ -21,7 +23,6 @@ namespace milkdrunk.pagemodels
             set
             {
                 startDate = value;
-                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -33,7 +34,6 @@ namespace milkdrunk.pagemodels
             set
             {
                 startTime = value;
-                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -45,7 +45,6 @@ namespace milkdrunk.pagemodels
             set
             {
                 isChecked = value;
-                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -57,7 +56,6 @@ namespace milkdrunk.pagemodels
             set
             {
                 endDate = value;
-                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }
@@ -70,7 +68,6 @@ namespace milkdrunk.pagemodels
             set
             {
                 endTime = value;
-                AddNewSleepingCommand.ChangeCanExecute();
                 OnPropertyChanged();
             }
         }

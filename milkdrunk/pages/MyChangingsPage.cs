@@ -32,7 +32,7 @@ namespace milkdrunk.pages
                         VerticalOptions = LayoutOptions.Start,
                         Children =
                         {
-                            new Label() { Text = "my changings" }
+                            new Label() { Text = "changings" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
@@ -44,7 +44,7 @@ namespace milkdrunk.pages
                         Children =
                         {
                             DefaultCollectionView()
-                                //.Bind(CollectionView.SelectedItemProperty, nameof(_vm.SelectedChanging))
+                                .Bind(CollectionView.SelectedItemProperty, nameof(_pm.SelectedChanging))
                                 .Bind(CollectionView.ItemsSourceProperty, nameof(_pm.Changings))
                         }
                     },
@@ -68,7 +68,7 @@ namespace milkdrunk.pages
                 SelectionMode = SelectionMode.Single,
                 ItemTemplate = DefaultDataTemplate()
             };
-            //collectionView.SelectionChanged += _vm.OnChangingSelectionChanged;
+            collectionView.SelectionChanged += _pm.OnChangingSelectionChanged;
             return collectionView;
         }
 
