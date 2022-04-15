@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace milkdrunk.pages
 {
-    partial class BabyDetailPage
+    partial class ChangingDetailPage
     {
         void Build()
         {
@@ -21,7 +21,7 @@ namespace milkdrunk.pages
                         VerticalOptions = LayoutOptions.Start,
                         Children =
                         {
-                            new Label() { Text = "baby detail" }
+                            new Label() { Text = "changing detail" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
@@ -36,20 +36,16 @@ namespace milkdrunk.pages
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
-                                .Bind(Label.TextProperty, nameof(_pm.Name)),
+                                .Bind(Label.TextProperty, nameof(_pm.ChangingType)),
                            new Label()
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
-                                .Bind(Label.TextProperty, nameof(_pm.BirthDate)),
-                            new Button() { Text = "edit baby" }
+                                .Bind(Label.TextProperty, nameof(_pm.Time)),
+                            new Button() { Text = "edit changing" }
                                 .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_pm.EditBabyCommand)),
-                            new Button() { Text = "set default baby" }
-                                .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5)
-                                .Bind(Button.CommandProperty, nameof(_pm.SetDefaultBabyCommand))
+                                .Paddings(5, 5, 5, 5),
+                                //.Bind(Button.CommandProperty, nameof(_pm.EditBabyCommand)),
                         }
                     },
                     new StackLayout()

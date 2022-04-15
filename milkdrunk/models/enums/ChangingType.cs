@@ -2,8 +2,8 @@
 {
     public enum ChangingType
     {
-        Mixed,
+        Wet,
         Dirty,
-        Wet
+        Mixed
     }
 }

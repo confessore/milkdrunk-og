@@ -1,5 +1,8 @@
-﻿using milkdrunk.models.enums;
+﻿using milkdrunk.models;
+using milkdrunk.models.enums;
 using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -9,25 +12,25 @@ namespace milkdrunk.pagemodels
     {
         public NewChangingPageModel()
         {
-            //PropertyChanged +=
-            //    (_, __) => SaveCommand.ChangeCanExecute();
             AddNewChangingCommand = new Command(AddNewChanging, CanAddNewChanging);
+            PropertyChanged +=
+                (_, __) => AddNewChangingCommand.ChangeCanExecute();
             ChangingTypes = Enum.GetNames(typeof(ChangingType));
         }
 
         public string[] ChangingTypes { get; }
 
-        ChangingType? changingType;
-        public ChangingType? ChangingType
+        string? selectedChangingType;
+        public string? SelectedChangingType
         {
-            get => changingType;
+            get => selectedChangingType;
             set
             {
-                changingType = value;
+                selectedChangingType = value;
                 OnPropertyChanged();
             }
         }
-
+         
         DateTime date = DateTime.Now;
         public DateTime Date
         {
@@ -52,31 +55,26 @@ namespace milkdrunk.pagemodels
 
         public Command? AddNewChangingCommand { get; }
 
-        bool CanAddNewChanging()
-        {
-            //if (IsChecked)
-            //{
-            //    if (StartDate.Date == EndDate.Date)
-            //        return Math.Floor(StartTime.TotalMinutes) < Math.Floor(EndTime.TotalMinutes);
-            //    return StartDate.Date < EndDate.Date;
-            //}
-            return true;
-        }
+        bool CanAddNewChanging() =>
+            !string.IsNullOrWhiteSpace(SelectedChangingType);
 
         async void AddNewChanging()
         {
             IsBusy = true;
-            //var start = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hours, StartTime.Minutes, 0);
-            //var end = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hours, StartTime.Minutes, 0);
-            //var sleeping = new Sleeping() { Start = start, End = end };
-            //var baby = Caregiver.Babies.FirstOrDefault(x => x.Id == Baby.Id);
-            //if (baby.Sleepings == null)
-            //    baby.Sleepings = new Collection<Sleeping>();
-            //baby.Sleepings.Add(sleeping);
-            //Caregiver.Babies.Remove(baby);
-            //Caregiver.Babies.Add(baby);
-            //await _localStorageService.WriteToFileAsync<Caregiver>(Caregiver, "caregiver");
-            //await Shell.Current.Navigation.PopAsync();
+            var record = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, 0);
+            var changing = new Changing()
+            {
+                ChangingType = Enum.Parse<ChangingType>(SelectedChangingType),
+                Time = record
+            };
+            var baby = Caregiver.Babies.FirstOrDefault(x => x.Id == Baby.Id);
+            if (baby.Changings == null)
+                baby.Changings = new Collection<Changing>();
+            baby.Changings.Add(changing);
+            Caregiver.Babies.Remove(baby);
+            Caregiver.Babies.Add(baby);
+            await _localStorageService.WriteToFileAsync<Caregiver>(Caregiver, "caregiver");
+            await Shell.Current.Navigation.PopAsync();
             IsBusy = false;
         }
 

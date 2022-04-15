@@ -39,6 +39,7 @@ namespace milkdrunk.pages
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5),
                             new Picker()
+                                .Bind(Picker.SelectedItemProperty, nameof(_pm.SelectedChangingType))
                                 .Bind(Picker.ItemsSourceProperty, nameof(_pm.ChangingTypes)),
                             new StackLayout()
                             {
@@ -49,7 +50,7 @@ namespace milkdrunk.pages
                                         .Margins(5, 5, 5, 5)
                                         .Bind(DatePicker.DateProperty, nameof(_pm.Date)),
                                     new TimePicker()
-                                        .Margins(5, 5, 5, 5)
+                                        .Margins(5, 5, 5, 5) 
                                         .Bind(TimePicker.TimeProperty, nameof(_pm.Time))
                                 }
                             },
