@@ -37,11 +37,10 @@ namespace milkdrunk.pagemodels
             }
         }
 
-        public void OnChangingSelectionChanged(object sender, SelectionChangedEventArgs args)
+        public async void OnChangingSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             IsBusy = true;
-            //new ChangingDetailPage(SelectedChanging ?? new Changing())
-            //await Shell.Current.Navigation.PushAsync();
+            await Shell.Current.Navigation.PushAsync(new ChangingDetailPage(SelectedChanging ?? new Changing()));
             IsBusy = false;
         }
 

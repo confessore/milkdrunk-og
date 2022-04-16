@@ -7,8 +7,11 @@ namespace milkdrunk.pagemodels
 {
     class ChangingDetailPageModel : BasePageModel
     {
-        public ChangingDetailPageModel()
+        public ChangingDetailPageModel(
+            Changing changing)
         {
+            Time = changing.Time;
+            ChangingType = changing.ChangingType;
         }
 
         ObservableCollection<Changing>? changings;

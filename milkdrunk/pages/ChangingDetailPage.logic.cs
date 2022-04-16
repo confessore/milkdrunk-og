@@ -1,4 +1,5 @@
-﻿using milkdrunk.pagemodels;
+﻿using milkdrunk.models;
+using milkdrunk.pagemodels;
 using Xamarin.Forms;
 
 namespace milkdrunk.pages
@@ -7,9 +8,10 @@ namespace milkdrunk.pages
     {
         ChangingDetailPageModel _pm;
 
-        public ChangingDetailPage()
+        public ChangingDetailPage(
+            Changing changing)
         {
-            BindingContext = _pm = new ChangingDetailPageModel();
+            BindingContext = _pm = new ChangingDetailPageModel(changing);
             Build();
         }
 
