@@ -1,7 +1,5 @@
-﻿using milkdrunk.models.enums;
-using milkdrunk.resources;
+﻿using milkdrunk.resources;
 using milkdrunk.views;
-using System;
 using Xamarin.CommunityToolkit.Markup;
 using Xamarin.Forms;
 
@@ -50,7 +48,7 @@ namespace milkdrunk.pages
                                         .Margins(5, 5, 5, 5)
                                         .Bind(DatePicker.DateProperty, nameof(_pm.Date)),
                                     new TimePicker()
-                                        .Margins(5, 5, 5, 5) 
+                                        .Margins(5, 5, 5, 5)
                                         .Bind(TimePicker.TimeProperty, nameof(_pm.Time))
                                 }
                             },

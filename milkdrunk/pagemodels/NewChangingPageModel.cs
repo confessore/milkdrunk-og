@@ -30,7 +30,7 @@ namespace milkdrunk.pagemodels
                 OnPropertyChanged();
             }
         }
-         
+
         DateTime date = DateTime.Now;
         public DateTime Date
         {

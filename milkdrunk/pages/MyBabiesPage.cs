@@ -75,7 +75,8 @@ namespace milkdrunk.pages
         DataTemplate DefaultDataTemplate()
         {
             return new DataTemplate(() =>
-                new Frame() {
+                new Frame()
+                {
                     BorderColor = (Color)(App.Current.Resources["Primary"] ?? Color.Red),
                     Content =
                         new StackLayout()
