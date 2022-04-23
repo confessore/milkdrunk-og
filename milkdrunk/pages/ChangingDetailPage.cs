@@ -42,10 +42,14 @@ namespace milkdrunk.pages
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
                                 .Bind(Label.TextProperty, nameof(_pm.Time)),
-                            new Button() { Text = "edit changing" }
+                            new Button() { Text = "edit" }
                                 .Margins(5, 5, 5, 5)
-                                .Paddings(5, 5, 5, 5),
-                                //.Bind(Button.CommandProperty, nameof(_pm.EditBabyCommand)),
+                                .Paddings(5, 5, 5, 5)
+                                .Bind(Button.CommandProperty, nameof(_pm.EditChangingCommand)),
+                            new Button() { Text = "delete" }
+                                .Margins(5, 5, 5, 5)
+                                .Paddings(5, 5, 5, 5)
+                                .Bind(Button.CommandProperty, nameof(_pm.DeleteChangingCommand)),
                         }
                     },
                     new StackLayout()

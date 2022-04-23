@@ -90,7 +90,12 @@ namespace milkdrunk.pagemodels
             IsBusy = true;
             var start = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hours, StartTime.Minutes, 0);
             var end = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hours, StartTime.Minutes, 0);
-            var sleeping = new Sleeping() { Start = start, End = end };
+            var sleeping = new Sleeping()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Start = start,
+                End = end
+            };
             var baby = Caregiver.Babies.FirstOrDefault(x => x.Id == Baby.Id);
             if (baby.Sleepings == null)
                 baby.Sleepings = new Collection<Sleeping>();

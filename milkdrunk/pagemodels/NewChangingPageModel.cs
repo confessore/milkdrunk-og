@@ -64,6 +64,7 @@ namespace milkdrunk.pagemodels
             var record = new DateTime(Date.Year, Date.Month, Date.Day, Time.Hours, Time.Minutes, 0);
             var changing = new Changing()
             {
+                Id = Guid.NewGuid().ToString(),
                 ChangingType = Enum.Parse<ChangingType>(SelectedChangingType),
                 Time = record
             };

@@ -42,11 +42,11 @@ namespace milkdrunk.pages
                                 .Paddings(5, 5, 5, 5)
                                 .CenterHorizontal()
                                 .Bind(Label.TextProperty, nameof(_pm.BirthDate)),
-                            new Button() { Text = "edit baby" }
+                            new Button() { Text = "edit" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .Bind(Button.CommandProperty, nameof(_pm.EditBabyCommand)),
-                            new Button() { Text = "set default baby" }
+                            new Button() { Text = "set default" }
                                 .Margins(5, 5, 5, 5)
                                 .Paddings(5, 5, 5, 5)
                                 .Bind(Button.CommandProperty, nameof(_pm.SetDefaultBabyCommand))
