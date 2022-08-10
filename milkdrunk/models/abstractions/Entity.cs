@@ -7,5 +7,6 @@ namespace milkdrunk.models.abstractions
         where T : IEquatable<T>
     {
         public T? Id { get; set; }
+        public long? CreatedAt { get; set; }
     }
 }

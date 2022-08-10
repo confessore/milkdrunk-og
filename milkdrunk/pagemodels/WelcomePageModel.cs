@@ -33,7 +33,8 @@ namespace milkdrunk.pagemodels
                 Id = Guid.NewGuid().ToString(),
                 Name = Name
             };
-            await _localStorageService.WriteToFileAsync(caregiver, "caregiver");
+            await _caregiverDBService.UpsertAsync(caregiver);
+            //await _localStorageService.WriteToFileAsync(caregiver, "caregiver");
             App.Current.MainPage = new DefaultShell();
             IsBusy = false;
         }

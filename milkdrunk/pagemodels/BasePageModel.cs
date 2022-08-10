@@ -17,6 +17,9 @@ namespace milkdrunk.pagemodels
         public ILocalStorageService _localStorageService =>
             DependencyService.Get<ILocalStorageService>();
 
+        public ILiteDBService<Caregiver, string> _caregiverDBService =>
+            DependencyService.Get<ILiteDBService<Caregiver, string>>();
+
         bool isBusy = false;
         public bool IsBusy
         {
@@ -70,7 +73,8 @@ namespace milkdrunk.pagemodels
             await _defaultService.UpdatePropertiesAsync();
             Caregiver = _defaultService.Caregiver;
             //Caregroup = _defaultService.Caregroup;
-            Baby = _defaultService.Baby;
+            if (_defaultService.Baby != null)
+                Baby = _defaultService.Baby;
             Title = _defaultService.Title;
             IsBusy = false;
         }

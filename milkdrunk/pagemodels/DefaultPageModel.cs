@@ -1,6 +1,7 @@
 ﻿using milkdrunk.models;
 using milkdrunk.pages;
 using milkdrunk.shells;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace milkdrunk.pagemodels
@@ -10,7 +11,9 @@ namespace milkdrunk.pagemodels
         new public virtual async Task OnAppearingAsync()
         {
             IsBusy = true;
-            var caregiver = await _localStorageService.ReadFromFileAsync<Caregiver>("caregiver");
+            var caregivers = await _caregiverDBService.FindAllAsync();
+            var caregiver = caregivers.FirstOrDefault();
+            //var caregiver = await _localStorageService.ReadFromFileAsync<Caregiver>("caregiver");
             if (caregiver != null)
             {
                 await Task.Delay(1000);

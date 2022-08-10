@@ -6,5 +6,6 @@ namespace milkdrunk.models.interfaces
         where T : IEquatable<T>
     {
         T? Id { get; set; }
+        long? CreatedAt { get; set; }
     }
 }
