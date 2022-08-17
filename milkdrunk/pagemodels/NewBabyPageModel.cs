@@ -47,7 +47,7 @@ namespace milkdrunk.pagemodels
             };
             //await _defaultService._babyContext.UpsertAsync(baby);
             if (Caregiver.Babies == null)
-                Caregiver.Babies = new Collection<Baby?>();
+                Caregiver.Babies = new Collection<Baby>();
             Caregiver.Babies.Add(baby);
             //await _localStorageService.WriteToFileAsync(Caregiver, "caregiver");
             //if (!await _localStorageService.FileExistsAsync("baby"))
@@ -58,3 +58,4 @@ namespace milkdrunk.pagemodels
         }
     }
 }
+ 

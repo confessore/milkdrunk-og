@@ -14,7 +14,7 @@ namespace milkdrunk.pagemodels
             NewBabyCommand = new Command(NewBaby);
         }
 
-        ObservableCollection<Baby>? babies;
+        ObservableCollection<Baby?>? babies;
         public ObservableCollection<Baby>? Babies
         {
             get => babies;
