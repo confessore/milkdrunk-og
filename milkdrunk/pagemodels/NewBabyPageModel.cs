@@ -41,16 +41,18 @@ namespace milkdrunk.pagemodels
             var baby = new Baby()
             {
                 Id = Guid.NewGuid().ToString(),
+                CreatedAt = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
                 Name = Name,
                 BirthDate = BirthDate
             };
             //await _defaultService._babyContext.UpsertAsync(baby);
             if (Caregiver.Babies == null)
-                Caregiver.Babies = new Collection<Baby>();
+                Caregiver.Babies = new Collection<Baby?>();
             Caregiver.Babies.Add(baby);
-            await _localStorageService.WriteToFileAsync(Caregiver, "caregiver");
-            if (!await _localStorageService.FileExistsAsync("baby"))
-                await _localStorageService.WriteToFileAsync(baby, "baby");
+            //await _localStorageService.WriteToFileAsync(Caregiver, "caregiver");
+            //if (!await _localStorageService.FileExistsAsync("baby"))
+            //await _localStorageService.WriteToFileAsync(baby, "baby");
+            await _caregiverDBService.UpsertAsync(Caregiver);
             await Shell.Current.Navigation.PopAsync();
             IsBusy = false;
         }

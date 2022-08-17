@@ -3,6 +3,7 @@ using milkdrunk.services.interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -70,14 +71,22 @@ namespace milkdrunk.pagemodels
         public virtual async Task OnAppearingAsync()
         {
             IsBusy = true;
-            await _defaultService.UpdatePropertiesAsync();
-            Caregiver = _defaultService.Caregiver;
-            //Caregroup = _defaultService.Caregroup;
-            if (_defaultService.Baby != null)
-                Baby = _defaultService.Baby;
-            Title = _defaultService.Title;
+            var caregivers = await _caregiverDBService.FindAllAsync();
+            Caregiver = caregivers.FirstOrDefault();
+            if (Caregiver != null)
+            {
+                if (Caregiver.Babies != null)
+                {
+                    Baby = Caregiver.Babies.FirstOrDefault();
+                    if (Baby != null)
+                        Title = BuildTitle();
+                }
+            }
             IsBusy = false;
         }
+
+        string? BuildTitle() =>
+            $"{Baby!.Name!} | {(DateTime.Now - Baby.BirthDate!).Days / 7}w, {(DateTime.Now - Baby.BirthDate!).Days % 7}d";
 
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
@@ -93,7 +102,9 @@ namespace milkdrunk.pagemodels
         }
 
         #region INotifyPropertyChanged
+
         public event PropertyChangedEventHandler? PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
@@ -102,6 +113,7 @@ namespace milkdrunk.pagemodels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
     }
 }

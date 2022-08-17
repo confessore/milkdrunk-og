@@ -31,6 +31,7 @@ namespace milkdrunk.pagemodels
             var caregiver = new Caregiver()
             {
                 Id = Guid.NewGuid().ToString(),
+                CreatedAt = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
                 Name = Name
             };
             await _caregiverDBService.UpsertAsync(caregiver);
