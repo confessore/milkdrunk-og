@@ -94,12 +94,12 @@ namespace milkdrunk.services
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> FindAllAsync() =>
             await InvokeAsync((collection) =>
-                Task.FromResult(collection.FindAll().ToList()));
+                Task.FromResult(collection.FindAll().ToArray()));
 
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> FindAllAsync(Expression<Func<TEntity, bool>> predicate) =>
             await InvokeAsync((collection) =>
-                Task.FromResult(collection.Find(predicate).ToList()));
+                Task.FromResult(collection.Find(predicate).ToArray()));
 
         /// <inheritdoc />
         public async Task<ObservableCollection<TEntity>> RetrieveAsync() =>
