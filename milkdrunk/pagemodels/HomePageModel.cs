@@ -45,7 +45,7 @@ namespace milkdrunk.pagemodels
             var caregroup = new Caregroup()
             {
                 Id = Guid.NewGuid().ToString(),
-                Owner = Caregiver
+                OwnerId = Caregiver.Id
             };
             //await _defaultService._caregroupContext.UpsertAsync(caregroup);
             var updated = new HomePage();
