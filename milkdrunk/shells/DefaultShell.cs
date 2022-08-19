@@ -92,7 +92,7 @@ namespace milkdrunk.shells
                     ChangingTab(),
                     FeedingTab(),
                     SleepingTab(),
-                    PumpingTab()
+                    //PumpingTab()
                 }
             };
         }
